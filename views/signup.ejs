@@ -1,0 +1,46 @@
+<%- include('partials/header') %>
+
+<body>
+
+        <div class="container">
+            <!-- <i class="material-icons avatar light-blue-text text-darken-3">account_circle</i> -->
+            <div class="avatar">
+                <img src="images/logo.jpg" alt="logo">
+            </div>
+            
+            <form action="/signup" method="post">
+                <div class="input-field">
+                    <i class="material-icons prefix">person</i>
+                    <input id="name" type="text" name="name" required title="enter name">
+                    <label for="name">Name</label>
+                </div>
+                <div class="input-field">
+                    <i class="material-icons prefix">account_circle</i>
+                    <input id="username" type="text" name="username" required title="enter username">
+                    <label for="username">Username</label>
+                </div>
+                <div class="input-field">
+                    <i class="material-icons prefix">lock</i>
+                    <input id="password" type="password" name="password" class="validate" minlength="6" pattern="^(?=.*[a-zA-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$" required>
+                    <label for="password">Password</label>
+                    <span class="helper-text" data-error="Enter atleast 6 character containing one letter, one scpecial character and one digit" data-success="Fair Password"></span>
+                </div>
+                
+    
+                
+                <button class="btn waves-effect waves-light light-blue darken-4" type="submit" name="action">Signup
+                    <i class="material-icons right">send</i>
+                  </button>
+                
+            </form>
+            <div class="links">
+                <span>Already have an account.&nbsp; <a href="/login">Login</a></span>
+            </div>
+            
+        </div>
+        
+    
+       
+    </body>
+
+<%- include('partials/footer') %>
