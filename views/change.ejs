@@ -1,0 +1,14 @@
+<%- include('partials/header') %>
+
+<body>
+    <div class="box">
+        <form action="/change" method="POST">
+            Current : <input type="password" name="oldpassword"><br>
+            New : <input type="password" name="newpassword"><br>
+            <input type="submit" value="Change">
+        </form>
+    </div>
+    
+</body>
+
+<%- include('partials/footer') %>
