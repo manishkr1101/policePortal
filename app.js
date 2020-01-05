@@ -59,11 +59,13 @@ const loginRoutes = require('./api/routes/login')
 const signupRoutes = require('./api/routes/signup')
 const changePswdRoutes = require('./api/routes/changepswd')
 const resetRoutes = require('./api/routes/reset')
+// const sendMailtRoutes = require('./api/routes/send-email')
 
 app.use('/login', loginRoutes)
 app.use('/signup', signupRoutes)
 app.use('/change', changePswdRoutes)
 app.use('/reset', resetRoutes)
+// app.use('/sendmail', sendMailtRoutes)
 
 const checkAuth = (req, res, next) => {
     // next();
