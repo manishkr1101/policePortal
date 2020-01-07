@@ -1,0 +1,131 @@
+<%- include('partials/header.ejs') %>
+
+<div class="container">
+    <h1>FIR Details</h1>
+    <div class="row">
+        <form action="/form/fir">
+            <fieldset>
+                <legend>
+                    <h2>Personal Details</h2>
+                </legend>
+                <div class="row">
+                    <div class="col s6">
+
+
+                        <div class="input-field">
+                            <i class="material-icons prefix">person</i>
+                            <input id="name" type="text" />
+                            <label for="name">Name</label>
+                        </div>
+
+                        <div class="input-field">
+                            <i class="material-icons prefix">email</i>
+                            <input id="email" type="email" />
+                            <label for="email">Email</label>
+                        </div>
+
+                        <div class="input-field">
+                            <i class="material-icons prefix">date_range</i>
+                            <input id="dob" type="date" />
+                            <label for="dob">Date Of Birth</label>
+                        </div>
+
+
+                    </div>
+                    <div class="col s6">
+                        <div class="input-field">
+                            <i class="material-icons prefix">wc</i>
+                            <select>
+                                <option value="" disabled selected>Choose your option</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="other">Other</option>
+                            </select>
+                            <label>Sex</label>
+                        </div>
+
+                        <div class="input-field">
+                            <i class="material-icons prefix">phone</i>
+                            <input id="mobile" type="tel" />
+                            <label for="mobile">Phone Number</label>
+                        </div>
+
+                        <div class="input-field">
+                            <i class="material-icons prefix">vpn_key</i>
+                            <input id="otp" type="number" maxlength="6" />
+                            <label for="otp">OTP</label>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+            </fieldset>
+
+            <fieldset>
+                <legend>
+                    <h2>Address Details</h2>
+                </legend>
+                <div class="row">
+                    <div class="col s6">
+
+
+                        <div class="input-field">
+                            <i class="material-icons prefix">mode_edit</i>
+                            <input id="Village/Town/City" type="text" />
+                            <label for="Village/Town/City">Village/Town/City</label>
+                        </div>
+
+                        <div class="input-field">
+                            <i class="material-icons prefix">email</i>
+                            <select>
+                                <option value="" disabled selected>Choose your District</option>
+                                
+                            </select>
+                            <label>District</label>
+                        </div>
+
+
+                    </div>
+                    <div class="col s6">
+                        <div class="input-field">
+                            <i class="material-icons prefix">email</i>
+                            <select>
+                                <option value="" disabled selected>Choose your State</option>
+                                <option value="male">Andhra</option>
+                                <option value="female">Bihar</option>
+                                <option value="other">Other</option>
+                            </select>
+                            <label>State</label>
+                        </div>
+
+                        <div class="input-field">
+                            <i class="material-icons prefix">email</i>
+                            <select>
+                                <option value="" disabled selected>Choose your Police Station</option>
+                                
+                            </select>
+                            <label>Police Station</label>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+            </fieldset>
+
+            <fieldset>
+                <legend></legend>
+            </fieldset>
+        </form>
+    </div>
+</div>
+
+<%- include('partials/footer') %>
+<script>
+    $('select').formSelect();
+</script>

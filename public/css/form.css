@@ -1,0 +1,12 @@
+h1 {
+  text-align: center; }
+
+h2 {
+  font-size: 32px; }
+
+fieldset {
+  border: none;
+  border-bottom: solid 2px gray; }
+
+.col.s6 {
+  padding: 0 40px; }

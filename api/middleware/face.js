@@ -34,6 +34,19 @@ module.exports = {
             })
         })
     },
+    addFaces: async function(personId, filePaths){
+        let persistedFaceIds = [];
+        try {
+            for(let filePath of filePaths){
+                const t = await this.addFace(personId, filePath);
+                persistedFaceIds.push(t)
+            }
+            return persistedFaceIds;
+        } catch (error) {
+            throw error;
+        }
+        
+    },
     createPerson: function(name, userData){
         const url = `${BASE_URL}/persongroups/${PERSON_GROUP_ID}/persons`;
         headers['Content-Type'] = 'application/json';
@@ -78,6 +91,7 @@ module.exports = {
         })
         
     },
+    
     /**
      * @return confidence and personId to all given faceIds
      * @param {[string]} faceIds Array of faceId to search in all Face Records
@@ -86,9 +100,11 @@ module.exports = {
         // console.log('in function',faceIds)
         const url = `${BASE_URL}/identify`;
         headers['Content-Type'] = 'application/json';
+
         const body = {
             "personGroupId": PERSON_GROUP_ID,
-            "faceIds": faceIds.slice(0,10)
+            "faceIds": faceIds,
+            "maxNumOfCandidatesReturned": 25
         }
         const options = {
             method: 'post',
