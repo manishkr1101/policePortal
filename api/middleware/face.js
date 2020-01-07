@@ -117,7 +117,9 @@ module.exports = {
                 if(err){
                     reject(err)
                 }
-                resolve(JSON.parse(body))
+                resolve({
+                    msg: 'Model trained successfuly'
+                })
             })
         })
     }

@@ -8,7 +8,7 @@ const mongoose = require('mongoose')
 const passport = require('passport')
 const firebase = require('firebase/app')
 const db = require('./api/middleware/db')
-
+const checkAuth = require('./api/middleware/checkAuth')
 
 const session = require('express-session')
 
@@ -60,22 +60,16 @@ const signupRoutes = require('./api/routes/signup')
 const changePswdRoutes = require('./api/routes/changepswd')
 const resetRoutes = require('./api/routes/reset')
 const identifyRoutes = require('./api/routes/identify')
+const createRoutes = require('./api/routes/createperson')
 
 app.use('/login', loginRoutes)
 app.use('/signup', signupRoutes)
 app.use('/change', changePswdRoutes)
 app.use('/reset', resetRoutes)
 app.use('/identify', identifyRoutes)
+app.use('/create', createRoutes)
 
-const checkAuth = (req, res, next) => {
-    // next();
-    if(req.isAuthenticated()){
-        next();
-    }
-    else{
-        res.redirect('/login')
-    }
-}
+
 
 app.get('/', checkAuth, (req, res) => {
     console.log(req.user);

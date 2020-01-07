@@ -4,6 +4,9 @@ const router = express.Router();
 // const passport = require('passport')
 const formidable = require('formidable')
 const face = require('../middleware/face')
+const checkAuth = require('../middleware/checkAuth')
+
+router.use(checkAuth);
 
 router.get('/', (req, res) => {
     res.render('identify')
