@@ -58,10 +58,12 @@ mongoose.connect(`mongodb+srv://manish:${process.env.MONGO_ATLAS_PASSWORD}@clust
 const loginRoutes = require('./api/routes/login')
 const signupRoutes = require('./api/routes/signup')
 const changePswdRoutes = require('./api/routes/changepswd')
+const resetRoutes = require('./api/routes/reset')
 
 app.use('/login', loginRoutes)
 app.use('/signup', signupRoutes)
 app.use('/change', changePswdRoutes)
+app.use('/reset', resetRoutes)
 
 const checkAuth = (req, res, next) => {
     // next();
