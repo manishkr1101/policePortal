@@ -1,0 +1,65 @@
+<%- include('partials/header.ejs') %>
+
+<div class="container">
+  <h1>Lost Vehicle</h1>
+  <div class="row">
+    <form action="/form/lost-vehicle">
+      <fieldset>
+        <legend>
+          <h2>Vehicle Details</h2>
+        </legend>
+        <div class="row">
+          <div class="col s6"></div>
+                <div class="input-field">
+                  <i class="material-icons prefix">receipt</i>
+                  <input id="regno" type="text" />
+                  <label for="regno">Registration Number</label>
+                </div>
+                <div class="input-field">
+                    <i class="material-icons prefix">directions_car</i>
+                    <input id="engno" type="text" />
+                    <label for="engno">Engine Number</label>
+                </div>
+                <div class="input-field">
+                    <i class="material-icons prefix">confirmation_number</i>
+                    <input id="cnfno" type="text" />
+                    <label for="cnfno">Chassis Number</label>
+                </div>
+          </div>
+        </div>
+      </fieldset>
+     <fieldset>
+         <legend>
+             <h2>Upload Owner Details</h2>
+         </legend>
+         <div class="row">
+             <div class="col s6">
+                <div class="file-field input-field">
+                    <div class="btn">
+                      <span>File</span>
+                      <input type="file" required />
+                    </div>
+                    <div class="file-path-wrapper">
+                      <input class="file-path validate" type="text" />
+                    </div>
+                  </div>
+             </div>
+         </div>
+     </fieldset> 
+     <div class="save">
+        <button
+        class="btn waves-effect waves-light"
+        type="submit"
+        name="action"
+      >
+        Submit
+        <i class="material-icons right">send</i>
+      </button>
+      </div>
+    </form>
+  </div>
+</div>
+<%- include('partials/footer') %>
+<script>
+  $("select").formSelect();
+</script>

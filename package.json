@@ -18,12 +18,14 @@
   },
   "homepage": "https://github.com/manishkr1101/policePortal#readme",
   "dependencies": {
+    "@google-cloud/storage": "^4.2.0",
     "body-parser": "^1.19.0",
     "dotenv": "^8.2.0",
     "ejs": "^3.0.1",
     "express": "^4.17.1",
     "express-session": "^1.17.0",
     "firebase": "^7.6.1",
+    "formidable": "^1.2.1",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.8.3",
     "mongoose-findorcreate": "^3.0.0",
@@ -32,6 +34,7 @@
     "nodemailer": "^6.4.2",
     "passport": "^0.4.1",
     "passport-local-mongoose": "^5.0.1",
-    "pdfkit": "^0.11.0"
+    "pdfkit": "^0.11.0",
+    "request": "^2.88.0"
   }
 }
