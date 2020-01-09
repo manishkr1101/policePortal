@@ -10,3 +10,9 @@ fieldset {
 
 .col.s6 {
   padding: 0 40px; }
+
+.save .btn {
+  margin: 20px auto; }
+
+.waves-effect {
+  display: block; }

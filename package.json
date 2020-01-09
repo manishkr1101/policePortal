@@ -34,6 +34,7 @@
     "nodemailer": "^6.4.2",
     "passport": "^0.4.1",
     "passport-local-mongoose": "^5.0.1",
+    "pdfkit": "^0.11.0",
     "request": "^2.88.0"
   }
 }

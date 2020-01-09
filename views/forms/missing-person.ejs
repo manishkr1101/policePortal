@@ -1,0 +1,337 @@
+<%- include('partials/header.ejs') %>
+
+<div class="container">
+  <h1>Missing Person</h1>
+  <div class="row">
+    <form action="/form/missing-person">
+      <fieldset>
+        <legend>
+          <h2>
+            Time of Occurence
+          </h2>
+        </legend>
+        <div class="row">
+          <div class="col s6">
+            <div class="input-field">
+              <i class="material-icons prefix">date_range</i>
+              <input id="fromdate" type="date" />
+              <label for="fromdate">From Date</label>
+            </div>
+          </div>
+          <div class="col s6">
+            <div class="input-field">
+              <i class="material-icons prefix">date_range</i>
+              <input id="todate" type="date" />
+              <label for="todate">To Date</label>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>
+          <h2>
+            Details of Person
+          </h2>
+        </legend>
+        <div class="row">
+          <div class="col s6">
+            <div class="input-field">
+              <i class="material-icons prefix">person</i>
+              <input id="name" type="text" />
+              <label for="name">Name</label>
+            </div>
+            <div class="input-field">
+              <i class="material-icons prefix">accessibility</i>
+              <select>
+                <option value="" disabled selected>Choose your option</option>
+                <option value="1">Fat</option>
+                <option value="2">Very Fat</option>
+                <option value="3">Normal/Medium</option>
+                <option value="4">Strong</option>
+                <option value="5">Muscular</option>
+                <option value="6">Thin</option>
+                <option value="7">Very Lanky/Skeletal</option>
+              </select>
+              <label>Body Build Type</label>
+            </div>
+            <div class="input-field">
+              <i class="material-icons prefix">height</i>
+              <input id="height1" type="text" />
+              <label for="height1">Height Range-From</label>
+            </div>
+            <div class="input-field">
+              <i class="material-icons prefix">accessibility_new</i>
+              <input id="age1" type="text" />
+              <label for="age1">Age Range-From</label>
+            </div>
+          </div>
+          <div class="col s6">
+            <div class="input-field">
+              <i class="material-icons prefix">wc</i>
+              <select>
+                <option value="" disabled selected>Choose your option</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+              </select>
+              <label>Sex</label>
+            </div>
+            <div class="input-field">
+              <i class="material-icons prefix">face</i>
+              <select>
+                <option value="" disabled selected>Choose your option</option>
+                <option value="11">Fair</option>
+                <option value="12">Very Fair</option>
+                <option value="13">Foreigner Type-Fair</option>
+                <option value="14">Wheatish</option>
+                <option value="15">Foreigner Type-Wheatish</option>
+                <option value="16">Brownish Dark</option>
+                <option value="17">Blackish Dark</option>
+                <option value="18">Foreigner Type-Dark</option>
+                <option value="19">Sallow</option>
+              </select>
+              <label>Body Complexion Type</label>
+            </div>
+            <div class="input-field">
+              <i class="material-icons prefix">height</i>
+              <input id="height2" type="text" />
+              <label for="height2">Height Range-To</label>
+            </div>
+            <div class="input-field">
+              <i class="material-icons prefix">accessibility_new</i>
+              <input id="age2" type="text" />
+              <label for="age2">Age Range-To</label>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>
+          <h2>Face</h2>
+        </legend>
+        <div class="row">
+          <div class="col s6">
+            <div class="input-field">
+              <i class="material-icons prefix">face</i>
+              <select>
+                <option value="" disabled selected>Choose your option</option>
+                <option value="21">Long (Oval)</option>
+                <option value="22">Round</option>
+                <option value="23">Square</option>
+                <option value="24">Receding Forehead</option>
+                <option value="25">Protruding Forehead</option>
+                <option value="26">Oval</option>
+                <option value="27">Square/Heavy Jaw</option>
+                <option value="28">Wrinkled</option>
+                <option value="29">Others</option>
+              </select>
+              <label>Face Type</label>
+            </div>
+            <div class="input-field">
+              <select>
+                <option value="" disabled selected>Choose your option</option>
+                <option value="31">Bearded</option>
+                <option value="32">Clean Shaven</option>
+                <option value="33">Goatee (French/Bulganin)</option>
+                <option value="34">Imperial</option>
+                <option value="35">Long</option>
+                <option value="36">Short</option>
+                <option value="37">Side Burn/Whisker</option>
+                <option value="38">Rolled and Tied (SIKH Type)</option>
+                <option value="39">Others</option>
+              </select>
+              <label>Beard</label>
+            </div>
+          </div>
+          <div class="col s6">
+            <div class="input-field">
+              <select>
+                <option value="" disabled selected>Choose your option</option>
+                <option value="41">Normal</option>
+                <option value="42">Long</option>
+                <option value="43">Hooked</option>
+                <option value="44">Pointed</option>
+                <option value="45">Small</option>
+                <option value="46">Deformed</option>
+                <option value="47">Bulbous</option>
+                <option value="48">Pierced</option>
+                <option value="49">Broad Nostrils</option>
+              </select>
+              <label>Nose</label>
+            </div>
+            <div class="input-field">
+              <select>
+                <option value="" disabled selected>Choose your option</option>
+                <option value="51">Clipped</option>
+                <option value="52">Drooping</option>
+                <option value="53">Fly Type</option>
+                <option value="54">Half Moustache</option>
+                <option value="55">Handle Bar</option>
+                <option value="56">Pencil</option>
+                <option value="57">Tooth Brush</option>
+                <option value="58">turned Up</option>
+              </select>
+              <label>Moustaches</label>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>
+          <h2>Eyes</h2>
+        </legend>
+        <div class="row">
+          <div class="col s6">
+            <div class="input-field">
+              <i class="material-icons prefix">visibility</i>
+              <select>
+                <option value="" disabled selected>Choose your option</option>
+                <option value="61">Normal</option>
+                <option value="62">Sunken </option>
+                <option value="63">Conspicuously Large </option>
+                <option value="64">Conspicuously Small</option>
+                <option value="65">Markedly Closely Placed</option>
+                <option value="66">Markedly Widely Placed</option>
+                <option value="67">Protruding</option>
+                <option value="68">Slit</option>
+                <option value="69">One Eyed</option>
+                <option value="60">Asterisk in Eye</option>
+              </select>
+              <label>Eyes Type</label>
+            </div>
+            <div class="input-field">
+              <select>
+                <option value="" disabled selected>Choose your option</option>
+                <option value="20">Yes</option>
+                <option value="40">No</option>
+              </select>
+              <label>Using Specs</label>
+            </div>
+          </div>
+          <div class="col s6">
+            <div class="input-field">
+              <select>
+                <option value="" disabled selected>Choose your option</option>
+                <option value="71">NO</option>
+                <option value="72">Blind in one Eye/option> </option
+                ><option value="73">Blind in both Eyes</option>
+                <option value="74">Artificial Left Eye</option>
+                <option value="75">Artificial Right Eye</option>
+                <option value="76">Both Eyes Artificial</option>
+              </select>
+              <label>Blind</label>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>
+          <h2>Hair</h2>
+        </legend>
+        <div class="row">
+          <div class="col s6">
+            <div class="input-field">
+              <i class="material-icons prefix">sentiment_satisfied_alt</i>
+              <select>
+                <option value="" disabled selected>Choose your option</option>
+                <option value="81">Normal</option>
+                <option value="82">Full bald</option
+                ><option value="83">Central bald </option
+                ><option value="84">Front bald</option>
+                <option value="85">Curly Black</option>
+                <option value="86">Curly Black & Grey</option>
+                <option value="87">Curly Grey</option>
+                <option value="88">Normal Grey</option>
+              </select>
+              <label>Hair Type</label>
+            </div>
+            <div class="input-field">
+              <select>
+                <option value="" disabled selected>Choose your option</option>
+                <option value="10">Lengthy</option>
+                <option value="20">Short</option>
+                <option value="30">Normal</option>
+              </select>
+              <label> Hair Length</label>
+            </div>
+          </div>
+          <div class="col s6">
+            <div class="input-field">
+              <select>
+                <option value="" disabled selected>Choose your option</option>
+                <option value="81">Black</option>
+                <option value="82">Brown </option>
+                <option value="83">Red</option>
+                <option value="84">White(Grey)</option>
+                <option value="85">Black and White Mix</option>
+                <option value="86">Grey/White Patched</option>
+              </select>
+              <label>Hair Color</label>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>
+          <h2>
+            Habits & Speech
+          </h2>
+        </legend>
+        <div class="row">
+          <div class="col s6">
+            <div class="input-field">
+              <i class="material-icons prefix">record_voice_over</i>
+              <select>
+                <option value="" disabled selected>Choose your option</option>
+                <option value="91">Bragging</option>
+                <option value="92">Chews Tobacco</option
+                ><option value="93">Drinks Liquor </option
+                ><option value="94">Drug Addict</option>
+                <option value="95">Eyes Blinking</option>
+                <option value="96">Eyes Shifting</option>
+                <option value="97">Gambler</option>
+                <option value="98">Moustache Twisting</option>
+                <option value="99">Nail Biting</option>
+                <option value="90">Smoker</option>
+              </select>
+              <label>Hair Type</label>
+            </div>
+          </div>
+          <div class="col s6">
+            <div class="input-field">
+              <select>
+                <option value="" disabled selected>Choose your option</option>
+                <option value="10">Normal</option>
+                <option value="20">Fast</option>
+                <option value="30">Slow</option>
+                <option value="10">Stammering</option>
+                <option value="20">Loud</option>
+                <option value="30">Soft</option>
+                <option value="10">Deep</option>
+                <option value="20">Nasal</option>
+                <option value="30">Staggering</option>
+                <option value="10">Feminine</option>
+                <option value="20">Masculine</option>
+              </select>
+              <label>Speech</label>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+      <div class="save">
+        <button
+          class="btn waves-effect waves-light"
+          type="submit"
+          name="action"
+        >
+          Submit
+          <i class="material-icons right">send</i>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+<%- include('partials/footer') %>
+<script>
+  $("select").formSelect();
+</script>
