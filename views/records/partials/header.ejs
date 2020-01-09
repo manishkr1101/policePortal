@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> <%= title %> </title>
+    <link rel="icon" href="images/logo.png">
+
+    <link rel="stylesheet" href="/materialize/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:100,300,400,600" rel="stylesheet" type="text/css">
+    <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css">
+    
+    <link rel="stylesheet" href="/css/records.css">
+    
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+</head>
+<body class="has-fixed-sidenav">
+    
+    
+
+    <ul id="slide-out" class="sidenav sidenav-fixed">
+        <div>
+              <li>
+                  <div class="user-view" style="background-color: maroon;">
+                      <!-- <div class="background">
+                          <img src="/images/icon.png">
+                      </div> -->
+                      <a href="#user"><img class="circle" src=""></a>
+                      <a href="#name"><span class="white-text name"><%= user.name %></span></a>
+                    <a href="#email"><span class="white-text email"><%= user.email %></span></a>
+                  </div>
+              </li>
+              <li><a class="waves-effect active" href="/fir" >FIR</a></li>
+              <li><a class="waves-effect" href="/criminal" >Criminals</a></li>
+              <!-- <li><a class="subheader">Subheader</a></li> -->
+              <!-- <li><a class="waves-effect" href="/logout">Logout</a></li> -->
+              <li><a class="waves-effect" href="/complaint">Complaints</a></li>
+        </div>
+      
+    </ul>
