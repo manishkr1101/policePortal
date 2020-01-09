@@ -14,14 +14,14 @@
           <div class="col s6">
             <div class="input-field">
               <i class="material-icons prefix">date_range</i>
-              <input id="fromdate" type="date" />
+              <input id="fromdate" type="text" class="datepicker">
               <label for="fromdate">From Date</label>
             </div>
           </div>
           <div class="col s6">
             <div class="input-field">
               <i class="material-icons prefix">date_range</i>
-              <input id="todate" type="date" />
+              <input id="todate" type="text" class="datepicker">
               <label for="todate">To Date</label>
             </div>
           </div>
@@ -334,4 +334,11 @@
 <%- include('partials/footer') %>
 <script>
   $("select").formSelect();
+  const date = new Date();
+  $('.datepicker').datepicker({
+    autoClose: true,
+    maxDate: date,
+    setDefaultDate: true,
+    defaultDate: date
+  });
 </script>

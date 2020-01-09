@@ -10,6 +10,12 @@ router.get("/fir", (req, res) => {
   });
 });
 
+router.post("/fir", (req, res) => {
+  console.log(req.body)
+  const date = new Date(req.body.dob)
+  res.send(date)
+});
+
 router.get("/missing-person", (req, res) => {
   res.render("forms/missing-person", {
     title: "Report Missing Person"
@@ -28,5 +34,12 @@ router.get("/complaint", (req, res) => {
   });
 });
 
-router.post("/", (req, res) => {});
+
+
+
+router.post("/test", (req, res) => {
+  const d = req.body.date;
+  const date = new Date(d)
+  res.send(date)
+});
 module.exports = router;

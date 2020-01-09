@@ -3,7 +3,7 @@
 <div class="container">
   <h1>FIR Details</h1>
   <div class="row">
-    <form action="/form/fir">
+    <form action="/form/fir" method="POST">
       <fieldset>
         <legend>
           <h2>Personal Details</h2>
@@ -24,7 +24,7 @@
 
             <div class="input-field">
               <i class="material-icons prefix">date_range</i>
-              <input id="dob" type="date" />
+              <input id="dob" type="text" class="datepicker" name="dob">
               <label for="dob">Date Of Birth</label>
             </div>
           </div>
@@ -169,11 +169,11 @@
               <p>
                 <label>Select Type of Victim</label>
                 <label>
-                  <input id="type-of-victim1" class="with-gap" name="group1" type="radio" />
+                  <input id="type-of-victim1" class="with-gap" name="group1" type="radio" value="Present"/>
                   <span>Present</span>
                 </label>
                 <label>
-                  <input id="type-of-victim2" class="with-gap" name="group1" type="radio" />
+                  <input id="type-of-victim2" class="with-gap" name="group1" type="radio" value="No"/>
                   <span>Not Present</span>
                 </label>
               </p>
@@ -240,7 +240,7 @@
         </div>
       </fieldset>
       <div class="save">
-        <button class="btn waves-effect waves-light" type="submit" name="action">
+        <button class="btn waves-effect waves-light" type="submit">
           Submit
           <i class="material-icons right">send</i>
         </button>
@@ -258,4 +258,11 @@
 <%- include('partials/footer') %>
 <script>
   $("select").formSelect();
+  const date = new Date();
+  $('.datepicker').datepicker({
+    autoClose: true,
+    maxDate: date,
+    setDefaultDate: true,
+    defaultDate: date
+  });
 </script>

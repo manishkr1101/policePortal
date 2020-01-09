@@ -26,7 +26,7 @@
 
             <div class="input-field">
               <i class="material-icons prefix">date_range</i>
-              <input id="dob" type="date" />
+              <input id="dob" type="text" class="datepicker">
               <label for="dob">Date Of Birth</label>
             </div>
             <div class="input-field">
@@ -76,7 +76,7 @@
             </div>
             <div class="input-field">
               <i class="material-icons prefix">date_range</i>
-              <input id="doi" type="date" />
+              <input id="doi" type="text" class="datepicker">
               <label for="doi">Date Of Incident</label>
             </div>
             <div class="input-field">
@@ -129,4 +129,11 @@
 <%- include('partials/footer') %>
 <script>
   $("select").formSelect();
+  const date = new Date();
+  $('.datepicker').datepicker({
+    autoClose: true,
+    maxDate: date,
+    setDefaultDate: true,
+    defaultDate: date
+  });
 </script>
