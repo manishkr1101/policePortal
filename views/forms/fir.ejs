@@ -152,6 +152,7 @@
         </div>
       </fieldset>
 
+
       <fieldset>
         <legend>
           <h2>FIR Details</h2>
@@ -276,6 +277,74 @@
       </div>
     </form>
   </div>
+
+
+
+            </fieldset>
+
+            <fieldset>
+                <legend>
+                    <h2>Address Details</h2>
+                </legend>
+                <div class="row">
+                    <div class="col s6">
+
+
+                        <div class="input-field">
+                            <i class="material-icons prefix">mode_edit</i>
+                            <input id="Village/Town/City" type="text" />
+                            <label for="Village/Town/City">Village/Town/City</label>
+                        </div>
+
+                        <div class="input-field">
+                            <i class="material-icons prefix">email</i>
+                            <select>
+                                <option value="" disabled selected>Choose your District</option>
+                                
+                            </select>
+                            <label>District</label>
+                        </div>
+
+
+                    </div>
+                    <div class="col s6">
+                        <div class="input-field">
+                            <i class="material-icons prefix">email</i>
+                            <select>
+                                <option value="" disabled selected>Choose your State</option>
+                                <option value="male">Andhra</option>
+                                <option value="female">Bihar</option>
+                                <option value="other">Other</option>
+                            </select>
+                            <label>State</label>
+                        </div>
+
+                        <div class="input-field">
+                            <i class="material-icons prefix">email</i>
+                            <select>
+                                <option value="" disabled selected>Choose your Police Station</option>
+                                
+                            </select>
+                            <label>Police Station</label>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+            </fieldset>
+
+            <fieldset>
+                <legend></legend>
+                <div class="row">
+                    
+                </div>
+            </fieldset>
+        </form>
+    </div>
+
 </div>
 
 <%- include('partials/footer') %>
