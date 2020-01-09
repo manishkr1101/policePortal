@@ -6,6 +6,7 @@ const formidable = require('formidable')
 const face = require('../middleware/face')
 const checkAuth = require('../middleware/checkAuth')
 const db = require('../middleware/db')
+const storage = require('../middleware/storage')
 
 router.use(checkAuth);
 
@@ -31,6 +32,10 @@ router.post('/', (req, res) => {
             return face.train();
         })
         .then(response => {
+            return storage.uploadFile(files.image.path, `criminals/${person.personId}/${files.image.name}`, files.image.type )
+        })
+        .then(imageInfo => {
+            person.images = [imageInfo];
             return db.ref(`/criminals/${person.personId}`).set(person)
         })
         .then(doc => {
