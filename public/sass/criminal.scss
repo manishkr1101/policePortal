@@ -1,0 +1,70 @@
+.submit-btn{
+    margin-top: 20px;
+} 
+.criminals-list{
+    width: 90%;
+    margin: auto;
+    
+}
+
+table.striped>tbody>tr:nth-child(odd) {
+    background-color: rgba(216, 193, 193, 0.5);
+}
+// $table-width: 100%;
+// $col-width: $table-width/5;
+// td, th{
+//     width: $col-width;
+// }
+// tr td:last-child{
+//     text-align: center;
+// }
+
+$i: 1;
+tr td:nth-child(#{$i+0}){
+    width: 5%;
+}
+
+tr td:nth-child(#{$i+1}){
+    width: 30%;
+}
+tr td:nth-child(#{$i+2}){
+    width: 10%;
+}
+tr td:nth-child(#{$i+3}){
+    width: 10%;
+}
+tr td:nth-child(#{$i+4}){
+    width: 15%;
+}
+tr td:nth-child(#{$i+5}){
+    width: 15%;
+}
+tr td:nth-child(#{$i+6}){
+    width: 15%;
+}
+thead tr:first-child{
+    border-top: solid 2px gray;
+    border-bottom: solid 2px gray!important;
+}
+
+td{
+    position: relative;
+}
+td img{
+    width: 30%;
+    position: relative;
+    top: 0;
+    left: 0;
+    transition: width 0.2s;
+}
+td img:hover{
+    width: 80%;
+}
+body{
+    counter-reset: Count-Value;
+}
+tr td:first-child:before
+{
+  counter-increment: Count-Value;   
+  content: counter(Count-Value)". ";
+}

@@ -1,27 +1,24 @@
 const express = require("express");
 const router = express.Router();
 const passport = require("passport");
-const User = require("../models/user");
-const checkAuth = require("../middleware/checkAuth");
+const checkAuth = require("../../middleware/checkAuth");
 
+const criminalRoute = require('./criminals')
 
+router.use('/criminal', criminalRoute)
 
 router.get("/fir", (req, res) => {
     
   res.render("records/fir", {
     title: "Report Fir",
-    user: getUser(req)
+    user: getUser(req),
+    css: 'fir'
   });
 });
 
 
 
-router.get("/criminal", (req, res) => {
-  res.render("records/criminal", {
-    title: "Criminals Records",
-    user: getUser(req)
-  });
-});
+
 
 router.get("/lost-vehicle", (req, res) => {
   res.render("records/lost-vehicle", {
@@ -45,13 +42,6 @@ router.post("/test", (req, res) => {
   res.send(date)
 });
 
-function getUser(req){
-    return {
-        name: (req.user && req.user.name) || 'Manish',
-        email: `${(req.user && req.user.username) || 'manishkr7424'}@gmail.com`,
-        imgUrl: (req.user && req.user.imgUrl) || '/images/logo.png'
-    }
-}
 
 
 

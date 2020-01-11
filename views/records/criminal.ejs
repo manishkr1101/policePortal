@@ -1,8 +1,78 @@
-
 <%- include('partials/header') %>
 
 <section>
-    <h1>Criminals</h1>
+    <div class="header">
+        <h1>List of Criminals</h1>
+    </div>
+    <div class="inputs container">
+        <div class="row">
+            <form action="" method="post" enctype="multipart/form-data">
+                <div class="col s6 choose-file">
+                    <div class="file-field input-field">
+                        <div class="btn">
+                            <span>File</span>
+                            <input type="file" accept="image/*">
+                        </div>
+                        <div class="file-path-wrapper">
+                            <input class="file-path validate" type="text">
+                        </div>
+                    </div>
+                </div>
+                <div class="name col s4">
+                    <div class="input-field">
+                        <i class="material-icons prefix">search</i>
+                        <input placeholder="Search by Name" id="query" type="search" class="validate">
+
+                    </div>
+                </div>
+                <div class="col s2">
+                    <button class="btn waves-effect waves-light submit-btn" type="submit" name="">Search
+                        <i class="material-icons right">arrow_forward</i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="criminals-list">
+        <div class="row">
+            <table class="striped highlight">
+                <thead>
+                    <tr>
+                        <th>S.No.</th>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>Sex</th>
+                        <th>District</th>
+                        <th>State</th>
+                        <th>Image</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <% if(typeof criminals != 'undefined'){ %>
+                    <%    for(let criminal of criminals){ %>
+                    <tr>
+                        <td></td>
+                        <td><strong> <%= criminal.name %></strong></td>
+                        <td>20</td>
+                        <td>Male</td>
+                        <td>Sheikhpura</td>
+                        <td>Bihar</td>
+                        <td>
+                            <img src="/images/icon.png" alt="muttu swami">
+                        </td>
+                    </tr>
+                    <%    } %>
+                    <% }%>
+
+
+
+
+                </tbody>
+            </table>
+        </div>
+    </div>
 </section>
-      
-<%- include('partials/header') %>
+
+<%- include('partials/footer') %>

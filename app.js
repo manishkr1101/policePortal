@@ -66,7 +66,7 @@ const identifyRoutes = require("./api/routes/identify");
 const createRoutes = require("./api/routes/createperson");
 const uploadRoutes = require("./api/routes/upload");
 const formsRoutes = require("./api/routes/forms");
-const recordsRoutes = require("./api/routes/records");
+const recordsRoutes = require("./api/routes/records/records");
 
 app.use("/login", loginRoutes);
 app.use("/signup", signupRoutes);
