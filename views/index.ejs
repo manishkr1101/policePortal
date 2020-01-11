@@ -39,6 +39,30 @@
       href="ico/apple-touch-icon-57-precomposed.png"
     />
     <link rel="shortcut icon" href="ico/favicon.ico" />
+    <style>
+      /* width */
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+      
+      /* Track */
+      ::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 5px black; 
+        /* border-radius: 10px; */
+        background: black;
+      }
+       
+      /* Handle */
+      ::-webkit-scrollbar-thumb {
+        background:white; 
+        border-radius: 10px;
+      }
+      
+      /* Handle on hover */
+      ::-webkit-scrollbar-thumb:hover {
+        background:rgb(106, 188, 243); 
+      }
+      </style>
   </head>
 
   <body>
@@ -59,10 +83,10 @@
               <nav>
                 <ul class="nav pull-right">
                   <li class="current"><a href="#intro">Home</a></li>
-                  <li><a href="#about">About</a></li>
                   <li><a href="#services">Services</a></li>
                   <li><a href="#works">Forms</a></li>
-                  <li><a href="#contact">Contact</a></li>
+                  <li><a href="#about">About</a></li>
+                  <!-- <li><a href="#contact">Contact</a></li> -->
                   <li class="dropdown">
                     <a href="#">Features <i class="icon-angle-down"></i></a>
                     <ul class="dropdown-menu">
@@ -100,6 +124,109 @@
     </section>
     <!-- end intro -->
     <!-- Section about -->
+    <!-- section services -->
+    <section id="services" class="section parallax dark">
+      <div class="container">
+        <div class="row">
+          <div class="span12">
+            <div class="heading">
+              <h3><span>Our services</span></h3>
+            </div>
+            <div class="sub-heading">
+              <p>
+                Gangs show there colors so we show ours red and blues all the way.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="span3">
+            <div class="box aligncenter">
+              <div class="halftop">
+                <h4><strong>FIR Management</strong></h4>
+                <!-- <i class="icon-desktop icon-4x"></i>-->
+                <img src="images/fir.jpg" width="55px" height="55px" />
+              </div>
+              <p>
+                View and manage recorded FIRs/ New FIRs
+              </p>
+              <a href="#" class="btn btn-theme">View</a>
+            </div>
+          </div>
+          <div class="span3">
+            <div class="box aligncenter">
+              <div class="halftop">
+                <h4><strong>Criminal Records</strong></h4>
+                <!--<i class="icon-briefcase icon-4x"></i>-->
+                <img src="images/download.jpg" width="51px" height="51px" />
+              </div>
+              <p>
+                View/Manage records of added criminals/cases
+              </p>
+              <a href="#" class="btn btn-theme">View</a>
+            </div>
+          </div>
+          <div class="span3">
+            <div class="box aligncenter">
+              <div class="halftop">
+                <h4><strong>Complaint Management</strong></h4>
+                <img src="images/complain.jpg" width="55px" height="55px" />
+                <!-- <i class="icon-mobile-phone icon-4x"></i>-->
+              </div>
+              <p>
+                View and Manage complaints recorded/added
+              </p>
+              <a href="#" class="btn btn-theme">View</a>
+            </div>
+          </div>
+          <div class="span3">
+            <div class="box aligncenter">
+              <div class="halftop">
+                <h4><strong>Form Verification</strong></h4>
+                <img src="images/verify.png" width="55px" height="55px" />
+                <!-- <i class="icon-mobile-phone icon-4x"></i>-->
+              </div>
+              <p>
+                Verify the requests for NOCs, Tenants/Employees
+              </p>
+              <a href="#" class="btn btn-theme">View</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- end section services -->
+    <!-- section works -->
+    <section id="works" class="section gray-bg">
+      <div class="container">
+        <div class="row">
+          <div class="span12">
+            <div class="heading">
+              <h3><span>Form Filling</span></h3>
+            </div>
+            <div class="sub-heading">
+              <p>
+                Lodge FIR, Complaint etc.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span12">
+          <ul type="none">
+            <li class="active"><a href="form/fir" class="btn btn-theme">Report FIR</a></li><br>
+            <li class="web"><a href="form/complaint" class="btn btn-theme">Report Complain</a></li><br>
+            <li class="brand"><a href="form/missing-person.ejs" class="btn btn-theme">Report Missing Person</a></li><br>
+            <li class="graphic"><a href="form/lost-vehicle.ejs" class="btn btn-theme">Report Lost Vehicle</a></li>
+          </ul>
+          <div class="clear">
+          </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- <section id="about"> -->
     <section id="about" class="section">
       <div class="container">
         <div class="row">
@@ -109,8 +236,7 @@
             </div>
             <div class="sub-heading">
               <p>
-                We have a history of doing what our name implies, creating a
-                visual language around the beliefs of the brands we work with.
+                We Serve our Community! We Protect our Citizens! United we stand, Divided we fall. Justice will be served!7
               </p>
             </div>
           </div>
@@ -240,100 +366,9 @@
       </div>
     </section>
     <!-- end section about -->
-    <!-- section services -->
-    <section id="services" class="section parallax dark">
-      <div class="container">
-        <div class="row">
-          <div class="span12">
-            <div class="heading">
-              <h3><span>Our services</span></h3>
-            </div>
-            <div class="sub-heading">
-              <p>
-                We have a history of doing what our name implies, creating a
-                visual language around the beliefs of the brands we work with.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="span3">
-            <div class="box aligncenter">
-              <div class="halftop">
-                <h4><strong>FIR Management</strong></h4>
-                <!-- <i class="icon-desktop icon-4x"></i>-->
-                <img src="images/fir.jpg" width="55px" height="55px" />
-              </div>
-              <p>
-                View and manage recorded FIRs/ New FIRs
-              </p>
-              <a href="#" class="btn btn-theme">View</a>
-            </div>
-          </div>
-          <div class="span3">
-            <div class="box aligncenter">
-              <div class="halftop">
-                <h4><strong>Criminal Records</strong></h4>
-                <!--<i class="icon-briefcase icon-4x"></i>-->
-                <img src="images/download.jpg" width="51px" height="51px" />
-              </div>
-              <p>
-                View/Manage records of added criminals/cases
-              </p>
-              <a href="#" class="btn btn-theme">View</a>
-            </div>
-          </div>
-          <div class="span3">
-            <div class="box aligncenter">
-              <div class="halftop">
-                <h4><strong>Complaint Management</strong></h4>
-                <img src="images/complain.jpg" width="55px" height="55px" />
-                <!-- <i class="icon-mobile-phone icon-4x"></i>-->
-              </div>
-              <p>
-                View and Manage complaints recorded/added
-              </p>
-              <a href="#" class="btn btn-theme">View</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- end section services -->
-    <!-- section works -->
-    <section id="works" class="section gray-bg">
-      <div class="container">
-        <div class="row">
-          <div class="span12">
-            <div class="heading">
-              <h3><span>Form Filling</span></h3>
-            </div>
-            <div class="sub-heading">
-              <p>
-                Lodge FIR, Complaint etc.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="span12">
-          <ul>
-            <li class="active"><a href="form/fir" class="btn btn-theme">Report FIR</a></li>
-            <li class="web"><a href="form/complaint" class="btn btn-theme">Report Complain</a></li>
-            <li class="brand"><a href="form/missing-person.ejs" class="btn btn-theme">Report Missing Person</a></li>
-            <li class="graphic"><a href="form/lost-vehicle.ejs" class="btn btn-theme">Report Lost Vehicle</a></li>
-          </ul>
-          <div class="clear">
-          </div>
-          <div class="clear"></div>
-          </div>
-        </div>
-      </div>
-    </section>
     <!-- section works -->
     <!-- section contact -->
-    <section id="contact" class="section">
+    <!-- <section id="contact" class="section">
       <div class="container">
         <div class="row">
           <div class="span12">
@@ -358,8 +393,8 @@
               Want to work with us or just want to say hello? Don't hesitate to
               get in touch!
             </p>
-            <!-- start contact form -->
-            <form action="" method="post" role="form" class="contactForm">
+             start contact form -->
+            <!-- <form action="" method="post" role="form" class="contactForm">
               <div id="sendmessage">Your message has been sent. Thank you!</div>
               <div id="errormessage"></div>
 
@@ -429,7 +464,7 @@
               </ul>
             </form>
 
-            <!-- end contact form -->
+             end contact form 
           </div>
           <div class="span6">
             <h4><i class="icon-suitcase"></i><strong>Our office</strong></h4>
@@ -509,7 +544,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </section>-->
     <!-- end section contact -->
 
     <footer>
@@ -525,7 +560,7 @@
                   &copy; NCRA - All right reserved
                 </p>
                 <div class="credits">
-                  Created by <a href="#" title="yeah...">Kumar Harsh</a>
+                  Created by <a href="#" title="yeah...">Manish Kumar JS lover</a>
                 </div>
               </div>
             </div>

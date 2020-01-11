@@ -21,7 +21,7 @@ body {
     .container .avatar img {
       width: 100%; }
 
-button[type=submit] {
+button[type="submit"] {
   display: block;
   margin: 20px auto; }
 
