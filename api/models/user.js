@@ -8,6 +8,10 @@ const userSchema = new mongoose.Schema({
     imgUrl: {
         type: String,
         default: 'images/profile.png'
+    },
+    admin: {
+        type: Number,
+        default: 0
     }
 })
 

@@ -76,11 +76,15 @@
       </table>
     </div>
   </div>
-  <div id="add">
-    <a class="btn-floating btn-large waves-effect waves-light red"
-      ><i class="material-icons">add</i></a
-    >
-  </div>
 </section>
 
 <%- include('partials/footer') %>
+<script>
+  function submit() {
+    $(".submit-btn")
+      .text("searching..")
+      .attr("disabled", "true");
+  }
+  $("form").on("submit", submit);
+  submit();
+</script>

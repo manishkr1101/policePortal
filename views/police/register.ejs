@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title> <%= title %> </title>
+    <link rel="icon" href="images/logo.jpg">
+
+    <link rel="stylesheet" href="/materialize/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:100,300,400,600" rel="stylesheet" type="text/css">
+    <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/css/responsive.css">
+
+    <link rel="stylesheet" href="/css/<%= css %>.css">
+
+    <style>
+        .container {
+            width: 60% !important;
+        }
+
+        .container .avatar {
+            width: 20%;
+        }
+
+        .col.s6 {
+            padding: 0 16px;
+        }
+    </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <!-- <link rel="manifest" href="/manifest.json"> -->
+
+
+</head>
+
+<body>
+
+    <div class="container">
+        <!-- <i class="material-icons avatar light-blue-text text-darken-3">account_circle</i> -->
+        <div class="avatar">
+            <img src="images/logo.jpg" alt="logo">
+        </div>
+
+        <form action="" method="post">
+            <div class="row">
+                <div class="col s6">
+                    <div class="input-field">
+                        <i class="material-icons prefix">person</i>
+                        <input id="name" type="text" name="name" required title="enter name">
+                        <label for="name">Name</label>
+                    </div>
+                    <div class="input-field">
+                        <i class="material-icons prefix">email</i>
+                        <input id="username" type="email" name="email" required title="enter username">
+                        <label for="username">Email</label>
+                    </div>
+                    <div class="input-field">
+                        <i class="material-icons prefix">phone</i>
+                        <input id="phone" type="tel" name="phone" required title="enter Mobile no">
+                        <label for="phone">Phone Number</label>
+                    </div>
+                    <div class="input-field">
+                        <i class="material-icons prefix">account_circle</i>
+                        <input id="station-id" type="text" name="stationId" title="enter station id">
+                        <label for="station-id">Station Id</label>
+                    </div>
+                </div>
+
+                <div class="col s6">
+                    <div class="input-field">
+                        <select name="rank">
+                            <option value="" disabled selected>Choose your rank</option>
+                            <option value="SP">SP</option>
+                            <option value="DSP">DSP</option>
+                            <option value="ins">Police Inspector</option>
+                            <option value="sub-ins">Sub Inspector</option>
+                        </select>
+                        <label>Rank</label>
+                    </div>
+                    <div class="input-field">
+                        <select name="level">
+                            <option value="" disabled selected>Choose your level</option>
+                            <option value="1">Level 1</option>
+                            <option value="2">Level 2</option>
+                            <option value="3">Level 3</option>
+                        </select>
+                        <label>Level</label>
+                    </div>
+                    <div class="input-field">
+                        <i class="material-icons prefix">lock</i>
+                        <!-- pattern="^(?=.*[a-zA-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$" -->
+                        <input id="password" type="password" name="password" class="validate" minlength="6" required>
+                        <label for="password">Password</label>
+                        <span class="helper-text"
+                            data-error="Enter atleast 6 character containing one letter, one scpecial character and one digit"
+                            data-success="Fair Password"></span>
+                    </div>
+
+
+
+                    <button class="btn waves-effect waves-light light-blue darken-4" type="submit"
+                        name="action">register
+                        <i class="material-icons right">send</i>
+                    </button>
+                </div>
+            </div>
+
+
+
+        </form>
+
+    </div>
+
+
+
+</body>
+
+<script src="/materialize/js/materialize.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('select').formSelect();
+    });
+</script>
+
+</html>
