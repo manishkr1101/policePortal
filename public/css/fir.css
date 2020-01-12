@@ -1,0 +1,41 @@
+.submit-btn {
+  margin-top: 20px; }
+
+.submit-btn {
+  margin-top: 20px; }
+
+.fir-list {
+  width: 90%;
+  margin: auto; }
+
+table.striped > tbody > tr:nth-child(odd) {
+  background-color: rgba(216, 193, 193, 0.5); }
+
+tr td:nth-child(1) {
+  width: 5%; }
+
+tr td:nth-child(2) {
+  width: 20%; }
+
+tr td:nth-child(3) {
+  width: 10%; }
+
+tr td:nth-child(4) {
+  width: 10%; }
+
+tr td:nth-child(5) {
+  width: 15%; }
+
+thead tr:first-child {
+  border-top: solid 2px gray;
+  border-bottom: solid 2px gray !important; }
+
+td {
+  position: relative; }
+
+body {
+  counter-reset: Count-Value; }
+
+tr td:first-child:before {
+  counter-increment: Count-Value;
+  content: counter(Count-Value) ". "; }

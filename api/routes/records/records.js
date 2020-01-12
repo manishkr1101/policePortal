@@ -3,22 +3,13 @@ const router = express.Router();
 const passport = require("passport");
 const checkAuth = require("../../middleware/checkAuth");
 
-const criminalRoute = require('./criminals')
+const criminalRoute = require("./criminals");
+const firRoute = require("./fir");
+const complaintRoute = require("./complaint");
 
-router.use('/criminal', criminalRoute)
-
-router.get("/fir", (req, res) => {
-    
-  res.render("records/fir", {
-    title: "Report Fir",
-    user: getUser(req),
-    css: 'fir'
-  });
-});
-
-
-
-
+router.use("/criminal", criminalRoute);
+router.use("/fir", firRoute);
+router.use("/complaint", complaintRoute);
 
 router.get("/lost-vehicle", (req, res) => {
   res.render("records/lost-vehicle", {
@@ -26,23 +17,8 @@ router.get("/lost-vehicle", (req, res) => {
   });
 });
 
-router.get("/complaint", (req, res) => {
-  res.render("records/complaint", {
-    title: "Complaint",
-    user: getUser(req)
-  });
+router.get("/test", (req, res) => {
+  console.log(req.ip, req.connection.remoteAddress);
 });
-
-
-
-
-router.post("/test", (req, res) => {
-  const d = req.body.date;
-  const date = new Date(d)
-  res.send(date)
-});
-
-
-
 
 module.exports = router;
