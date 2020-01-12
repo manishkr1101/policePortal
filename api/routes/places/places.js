@@ -1,11 +1,44 @@
 const router = require('express').Router()
+const db = require('../../middleware/db')
 
 router.get('/states', (req, res) => {
-    let state = 'Andhra Pradesh,Arunachal Pradesh,Assam,Bihar,Chhattisgarh,Goa,Gujarat,Haryana,Himachal Pradesh,Jammu and Kashmir,Jharkhand,Karnataka,Kerala,Madhya Pradesh,Maharashtra,Manipur,Meghalaya,Mizoram,Nagaland,Odisha,Punjab,Rajasthan,Sikkim,Tamil Nadu,Telangana,Tripura,Uttar Pradesh,Uttarakhand,West Bengal,Andaman and Nicobar,Chandigarh,Dadra, Nagar Haveli,Daman and Diu,Lakshadweep,Delhi,Puducherry';
-    let states = state.split(',');
-    res.status(200).json({
-        states: states
-    })
+    db.ref('/places/states').once('value')
+        .then(doc => doc.val())
+        .then(data => {
+            let arr = []
+            for (let d in data) {
+                arr.push(d)
+            }
+            res.status(200).json(arr)
+        })
+
+})
+
+router.get('/:state', (req, res) => {
+    const state = req.params.state
+    db.ref('/places/states/' + state).once('value')
+        .then(doc => doc.val())
+        .then(data => {
+            let arr = []
+            for (let d in data) {
+                arr.push(d)
+            }
+            res.status(200).json(arr)
+        })
+})
+
+router.get('/:state/:dist', (req, res) => {
+    const state = req.params.state
+    const dist = req.params.dist
+    db.ref('/places/states/' + state+'/'+dist).once('value')
+        .then(doc => doc.val())
+        .then(data => {
+            let arr = []
+            for (let d in data) {
+                arr.push(d + ': ' + data[d])
+            }
+            res.status(200).json(arr)
+        })
 })
 
 module.exports = router

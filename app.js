@@ -97,11 +97,41 @@ app.get("/logout", checkAuth, (req, res) => {
 });
 
 app.get("/data", (req, res) => {
-  db.ref()
-    .once("value")
-    .then(data => {
-      res.json(data);
-    });
+
+  // let obj = {
+  //   BR26001: 'Pir Bahaur',
+  //   BR26002: 'Beur',
+  //   BR26003: 'Kotwali',
+  //   BR26004: 'Kankarbagh',
+  //   BR26005: 'Rajiv Nagar'
+  // }
+
+  // db.ref('/places/states/Bihar').update({
+  //   Patna: obj
+  // })
+  
+  // db.ref()
+  //   .once("value")
+  //   .then(data => {
+  //     res.json(data);
+  //   });
+  // let state = 'Andhra Pradesh,Arunachal Pradesh,Assam,Bihar,Chhattisgarh,Goa,Gujarat,Haryana,Himachal Pradesh,Jammu and Kashmir,Jharkhand,Karnataka,Kerala,Madhya Pradesh,Maharashtra,Manipur,Meghalaya,Mizoram,Nagaland,Odisha,Punjab,Rajasthan,Sikkim,Tamil Nadu,Telangana,Tripura,Uttar Pradesh,Uttarakhand,West Bengal,Andaman and Nicobar,Chandigarh,Dadra and Nagar Haveli,Daman and Diu,Lakshadweep,Delhi,Puducherry';
+  // let states = state.split(',');
+  // let stateObj = {}
+  // for(let s of states){
+  //   stateObj[s] = 0
+  // }
+  // let dist = 'Araria,Madhepura,Arwal,Madhubani,Aurangabad,Monghyr,Banka,Muzaffarpur,Begusarai,Nalanda,Bhagalpur,Nawada,Bhojpur,Patna,Buxar,Purnea,Darbhanga,Rohtas,East Champaran,Saharsa,Gaya,Samastipur,Gopalganj,Saran,Jamui,Shiekhpura,Jehanabad,Sheohar,Kaimur,Sitamarhi,Katihar,Siwan,Khagaria,Supaul,Kishanganj,Vaishali,Lakhisarai,West Champaran';
+  let dist = 'Agra,Aligarh,PrayagRaj,Ambedkar Nagar,Amroha,Auraiya,Azamgarh,Badaun,Bahraich,Ballia,Balrampur,Banda District,Barabanki,Bareilly,Basti,Bijnor,Bulandshahr,Chandauli(Varanasi Dehat),Chitrakoot,Deoria,Etah,Etawah,Faizabad,Farrukhabad,Fatehpur,Firozabad,Gautam Buddha Nagar,Ghaziabad,Ghazipur,Gonda,Gorakhpur,Hamirpur,Hapur District,Hardoi,Hathras,Jaunpur District,Jhansi,Kannauj,Kanpur Dehat,Kanpur Nagar,Kasganj,Kaushambi,Kushinagar,Lakhimpur Kheri,Lalitpur,Lucknow,Maharajganj,Mahoba,Mainpuri,Mathura,Mau,Meerut,Mirzapur,Moradabad,Muzaffarnagar,Pilibhit,Pratapgarh,Rae Bareli,Rampur,Saharanpur,Sant Kabir Nagar,Sant Ravidas Nagar,Sambhal,Shahjahanpur,Shamli,Shravasti,Siddharthnagar,Sitapur,Sonbhadra,Sultanpur,Unnao,Varanasi (Kashi),Allahabad,Amethi,Bagpat'
+  
+  let dists = dist.split(',')
+  let distsObj = {}
+  for(let d of dists){
+    distsObj[d] = 0
+  }
+  db.ref('/places/states').update({
+    'Uttar Pradesh': distsObj
+  })
 });
 
 app.listen(process.env.PORT || 3000, () => {
