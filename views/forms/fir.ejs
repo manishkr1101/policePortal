@@ -12,13 +12,13 @@
           <div class="col s6">
             <div class="input-field">
               <i class="material-icons prefix">person</i>
-              <input id="name" type="text" />
+              <input id="name" type="text" name="name" />
               <label for="name">Name</label>
             </div>
 
             <div class="input-field">
               <i class="material-icons prefix">email</i>
-              <input id="email" type="email" />
+              <input id="email" type="email" name="email"/>
               <label for="email">Email</label>
             </div>
 
@@ -31,7 +31,7 @@
           <div class="col s6">
             <div class="input-field">
               <i class="material-icons prefix">wc</i>
-              <select>
+              <select name="sex">
                 <option value="" disabled selected>Choose your option</option>
                 <option value="male">Male</option>
                 <option value="female">Female</option>
@@ -42,13 +42,13 @@
 
             <div class="input-field">
               <i class="material-icons prefix">phone</i>
-              <input id="mobile" type="tel" />
+              <input id="mobile" type="tel" name="phone" />
               <label for="mobile">Phone Number</label>
             </div>
 
             <div class="input-field">
               <i class="material-icons prefix">vpn_key</i>
-              <input id="otp" type="number" maxlength="6" />
+              <input id="otp" type="number" maxlength="6" name="otp"/>
               <label for="otp">OTP</label>
             </div>
           </div>
@@ -64,13 +64,13 @@
           <div class="col s6">
             <div class="input-field">
               <i class="material-icons prefix">location_city</i>
-              <input id="Village/Town/City1" type="text" />
+              <input id="Village/Town/City1" type="text" name="city" />
               <label for="Village/Town/City1">Village/Town/City</label>
             </div>
 
             <div class="input-field">
               <i class="material-icons prefix">business</i>
-              <select>
+              <select name="district">
                 <option value="" disabled selected>Choose your District</option>
               </select>
               <label>District</label>
@@ -79,10 +79,10 @@
           <div class="col s6">
             <div class="input-field">
               <i class="material-icons prefix">home_work</i>
-              <select>
+              <select name="state">
                 <option value="" disabled selected>Choose your State</option>
-                <option value="male">Andhra</option>
-                <option value="female">Bihar</option>
+                <option value="Andhra">Andhra</option>
+                <option value="Bihar">Bihar</option>
                 <option value="other">Other</option>
               </select>
               <label>State</label>
@@ -90,7 +90,7 @@
 
             <div class="input-field">
               <i class="material-icons prefix">local_convenience_store</i>
-              <select>
+              <select name="ps">
                 <option value="" disabled selected>Choose your Police Station</option>
               </select>
               <label>Police Station</label>
@@ -111,13 +111,13 @@
           <div class="col s6">
             <div class="input-field">
               <i class="material-icons prefix">location_city</i>
-              <input id="Village/Town/City2" type="text" />
+              <input id="Village/Town/City2" type="text" name="permCity" />
               <label for="Village/Town/City2">Village/Town/City</label>
             </div>
 
             <div class="input-field">
               <i class="material-icons prefix">business</i>
-              <select>
+              <select name="permDistrict">
                 <option value="" disabled selected>Choose your District</option>
               </select>
               <label>District</label>
@@ -126,9 +126,9 @@
           <div class="col s6">
             <div class="input-field">
               <i class="material-icons prefix">home_work</i>
-              <select>
+              <select name="permState">
                 <option value="" disabled selected>Choose your State</option>
-                <option value="male">Andhra</option>
+                <option value="Andhra">Andhra</option>
                 <option value="female">Bihar</option>
                 <option value="other">Other</option>
               </select>
@@ -137,7 +137,7 @@
 
             <div class="input-field">
               <i class="material-icons prefix">local_convenience_store</i>
-              <select>
+              <select name="permPs">
                 <option value="" disabled selected>Choose your Police Station</option>
               </select>
               <label>Police Station</label>
@@ -154,7 +154,7 @@
         <div class="row">
           <div class="col s6">
             <div class="input-field">
-              <select>
+              <select name="natureOfComplaint">
                 <option value="" disabled selected>Choose your option</option>
                 <option value="1">Theft/Robbery</option>
                 <option value="2">Murder/Attempt to Murder</option>
@@ -169,28 +169,28 @@
               <p>
                 <label>Select Type of Victim</label>
                 <label>
-                  <input id="type-of-victim1" class="with-gap" name="group1" type="radio" value="Present"/>
+                  <input id="type-of-victim1" class="with-gap" name="typeOfVictim" type="radio" value="present"/>
                   <span>Present</span>
                 </label>
                 <label>
-                  <input id="type-of-victim2" class="with-gap" name="group1" type="radio" value="No"/>
+                  <input id="type-of-victim2" class="with-gap" name="typeOfVictim" type="radio" value="absent"/>
                   <span>Not Present</span>
                 </label>
               </p>
             </div>
             <div class="input-field">
-              <textarea id="textarea1" class="materialize-textarea"></textarea>
+              <textarea id="textarea1" class="materialize-textarea" name="content"></textarea>
               <label for="textarea1">FIR Content</label>
             </div>
             <div class="input-field">
               <p>
                 <label>Occurence Place Known</label>
                 <label>
-                  <input id="place-of-occur1" class="with-gap" name="group2" type="radio" />
+                  <input id="place-of-occur1" class="with-gap" name="occurencePlaceKnown" type="radio" value="1" />
                   <span>Yes</span>
                 </label>
                 <label>
-                  <input id="place-of-occur2" class="with-gap" name="group2" type="radio" />
+                  <input id="place-of-occur2" class="with-gap" name="occurencePlaceKnown" type="radio" value="0" />
                   <span>No</span>
                 </label>
               </p>
@@ -256,13 +256,4 @@
 
 
 <%- include('partials/footer') %>
-<script>
-  $("select").formSelect();
-  const date = new Date();
-  $('.datepicker').datepicker({
-    autoClose: true,
-    maxDate: date,
-    setDefaultDate: true,
-    defaultDate: date
-  });
-</script>
+<script src="/js/forms/fir.js"></script>

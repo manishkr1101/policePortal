@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router();
 const passport = require('passport')
 const User = require('../models/user')
+let i = 1
 
 const checkAuth = (req, res, next) => {
     if(req.isAuthenticated()){
@@ -15,6 +16,8 @@ const checkAuth = (req, res, next) => {
 router.get('/', checkAuth, (req, res) => {
     // console.log(req.user);
     // res.sendFile(`${process.env.PWD}/login.html`);
+    console.log(i)
+    i++;
     res.render('login', {
         title: 'Login',
         css: 'login'
