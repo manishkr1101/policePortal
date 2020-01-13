@@ -2,7 +2,7 @@ const router = require('express').Router()
 const db = require('../../middleware/db')
 
 router.get('/states', (req, res) => {
-    db.ref('/places/states').once('value')
+    db.ref('/places/State').once('value')
         .then(doc => doc.val())
         .then(data => {
             let arr = []
@@ -16,7 +16,7 @@ router.get('/states', (req, res) => {
 
 router.get('/:state', (req, res) => {
     const state = req.params.state
-    db.ref('/places/states/' + state).once('value')
+    db.ref('/places/State/' + state).once('value')
         .then(doc => doc.val())
         .then(data => {
             let arr = []
@@ -30,7 +30,7 @@ router.get('/:state', (req, res) => {
 router.get('/:state/:dist', (req, res) => {
     const state = req.params.state
     const dist = req.params.dist
-    db.ref('/places/states/' + state+'/'+dist).once('value')
+    db.ref('/places/State/' + state+'/'+dist).once('value')
         .then(doc => doc.val())
         .then(data => {
             let arr = []
