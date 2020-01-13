@@ -3,20 +3,26 @@ const router = express.Router();
 const passport = require("passport");
 const User = require("../models/user");
 const checkAuth = require("../middleware/checkAuth");
+const otpSender = require('../middleware/otp-sender')
+
 
 let otps = {}
 
 router.get("/fir", (req, res) => {
-  req.body.otp = otps[req.body.phone]
-  res.render("forms/fir", {
-    title: "Report Fir"
-  });
+  otpSender.sendOTP(918340247596, 'Your otp is $otp. enter your otp to verify.')
+  .then(body => {
+    console.log(body)
+    res.render("forms/fir", {
+      title: "Report Fir"
+    });
+  })
+  
 });
 
 router.post("/fir", (req, res) => {
-  console.log(req.body)
-  const date = new Date(req.body.dob)
-  res.send(req.body)
+  let fir = {
+
+  }
 });
 
 router.get("/missing-person", (req, res) => {

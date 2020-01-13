@@ -3,7 +3,7 @@
 <div class="container">
   <h1>FIR Details</h1>
   <div class="row">
-    <form action="/form/fir" method="POST">
+    <form action="/form/fir" method="POST" enctype="multipart/form-data">
       <fieldset>
         <legend>
           <h2>Personal Details</h2>
@@ -100,7 +100,7 @@
         <div class="row">
           <p>
             <label>
-              <input id="same-address" type="checkbox" class="filled-in" />
+              <input id="same-address" type="checkbox" class="filled-in" name="isSameAddr" />
               <span>If Permanent address is same as Present address then click on
                 the check box</span>
             </label>
@@ -242,6 +242,24 @@
 
 </div>
 
+<style>
+  .waves-effect{
+    display: inline-block;
+  }
+</style>
+
+<aside>
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <h4>Warning</h4>
+      <p>An OTP will be sent on number <span class="number"></span></p>
+    </div>
+    <div class="modal-footer">
+      <button class="modal-close waves-effect waves-green btn-flat">Cancle</button>
+      <button class="modal-close waves-effect waves-green btn-flat" onclick="sendOTP()">Send</button>
+    </div>
+  </div>
+</aside>
 
 
 <%- include('partials/footer') %>

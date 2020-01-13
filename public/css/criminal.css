@@ -33,6 +33,14 @@ thead tr:first-child {
   border-top: solid 2px gray;
   border-bottom: solid 2px gray !important; }
 
+tr {
+  cursor: pointer; }
+
+tbody tr:hover {
+  background-color: rgba(172, 139, 139, 0.5); }
+  tbody tr:hover img {
+    width: 80%; }
+
 td {
   position: relative; }
 
@@ -43,12 +51,13 @@ td img {
   left: 0;
   transition: width 0.2s; }
 
-td img:hover {
-  width: 80%; }
-
 body {
   counter-reset: Count-Value; }
 
 tr td:first-child:before {
   counter-increment: Count-Value;
   content: counter(Count-Value) ". "; }
+
+section #id {
+  float: right;
+  position: fixed; }

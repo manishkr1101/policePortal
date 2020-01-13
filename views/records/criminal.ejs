@@ -21,20 +21,11 @@
         <div class="name col s4">
           <div class="input-field">
             <i class="material-icons prefix">search</i>
-            <input
-              placeholder="Search by Name"
-              id="query"
-              type="search"
-              class="validate"
-            />
+            <input placeholder="Search by Name" id="query" type="search" class="validate" />
           </div>
         </div>
         <div class="col s2">
-          <button
-            class="btn waves-effect waves-light submit-btn"
-            type="submit"
-            name=""
-          >
+          <button class="btn waves-effect waves-light submit-btn" type="submit" name="">
             Search
             <i class="material-icons right">arrow_forward</i>
           </button>
@@ -60,17 +51,17 @@
         <tbody>
           <% if(typeof criminals != 'undefined'){ %> <% for(let criminal of
           criminals){ %>
-          <tr>
-            <td></td>
-            <td><strong> <%= criminal.name %></strong></td>
-            <td>20</td>
-            <td>Male</td>
-            <td>Sheikhpura</td>
-            <td>Bihar</td>
-            <td>
-              <img src="/images/icon.png" alt="muttu swami" />
-            </td>
-          </tr>
+            <tr data-target="<%= criminal.name %>" class="wave-effect">
+              <td></td>
+              <td><strong> <%= criminal.name %></strong></td>
+              <td>20</td>
+              <td>Male</td>
+              <td>Sheikhpura</td>
+              <td>Bihar</td>
+              <td>
+                <img src="/images/icon.png" alt="muttu swami" />
+              </td>
+            </tr>
           <% } %> <% }%>
         </tbody>
       </table>

@@ -69,6 +69,8 @@ const formsRoutes = require("./api/routes/forms");
 const recordsRoutes = require("./api/routes/records/records");
 const registerRoutes = require('./api/routes/police/register')
 const placesRoutes = require('./api/routes/places/places')
+const nocRoutes = require('./api/routes/nature-of-complaint')
+
 
 app.use("/login", loginRoutes);
 app.use("/signup", signupRoutes);
@@ -81,6 +83,7 @@ app.use("/form", formsRoutes);
 app.use('/', recordsRoutes)
 app.use('/register', registerRoutes)
 app.use('/places', placesRoutes)
+app.use('/nature-of-complaint', nocRoutes)
 
 app.get("/", checkAuth, (req, res) => {
   console.log(req.user);
