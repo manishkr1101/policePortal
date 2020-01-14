@@ -12,7 +12,8 @@ const userSchema = new mongoose.Schema({
     admin: {
         type: Number,
         default: 0
-    }
+    },
+    psid: String
 })
 
 userSchema.plugin(passportLocalMongoose)

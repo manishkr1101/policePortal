@@ -70,6 +70,7 @@ const recordsRoutes = require("./api/routes/records/records");
 const registerRoutes = require('./api/routes/police/register')
 const placesRoutes = require('./api/routes/places/places')
 const nocRoutes = require('./api/routes/nature-of-complaint')
+const otpRoutes = require('./api/routes/send-otp')
 
 
 app.use("/login", loginRoutes);
@@ -84,9 +85,11 @@ app.use('/', recordsRoutes)
 app.use('/register', registerRoutes)
 app.use('/places', placesRoutes)
 app.use('/nature-of-complaint', nocRoutes)
+app.use('/sendotp', otpRoutes)
 
 app.get("/", checkAuth, (req, res) => {
   console.log(req.user);
+  
   const options = {
     title: "Home",
     css: "styles"

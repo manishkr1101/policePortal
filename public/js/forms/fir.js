@@ -128,12 +128,13 @@ function openOtpPrompt(){
 
 async function sendOTP(){
     try {
-        const res = await fetch('/sendotp',{
-            method: 'post',
-            body: JSON.stringify({ph: DOM.phone.value})
+        const res = await fetch('/sendotp/91'+DOM.phone.value,{
+            method: 'post'
         })
-        console.log(res)
+        // console.log(res)
         if(res.status == 200){
+            const data = await res.json()
+            console.log(data)
             M.toast({html: 'OTP has been sent'})
         }
         else{

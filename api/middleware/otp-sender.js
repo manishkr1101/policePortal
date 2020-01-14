@@ -34,6 +34,8 @@ module.exports = {
                     reject(err)
                 }
                 else {
+                    console.log(body)
+                    body = JSON.parse(body)
                     if(body.status == 'failure'){
                         reject(body)
                     }
@@ -53,6 +55,7 @@ module.exports = {
     },
     verifyOTP: function(phone, otp){
         if(typeof otps[phone] != 'undefined' && otps[phone] == otp){
+            delete otps[phone]
             return true
         }
         return false
