@@ -1,0 +1,37 @@
+.header {
+  text-align: center; }
+
+.addcrime {
+  float: right;
+  margin-top: 20px; }
+
+tr {
+  border-bottom: none; }
+
+section #persondetails tr td:nth-child(1) {
+  font-weight: 500;
+  width: 20%; }
+
+section #persondetails tr td:nth-child(2) {
+  width: 20%; }
+
+section #persondetails tr td:nth-child(3) {
+  font-weight: 500;
+  width: 20%; }
+
+section #persondetails tr td:nth-child(4) {
+  width: 30%; }
+
+.images {
+  text-align: center; }
+
+.images img {
+  height: 150px;
+  width: 150px; }
+
+body {
+  counter-reset: Count-Value; }
+
+section #crime tr td:first-child:before {
+  counter-increment: Count-Value;
+  content: counter(Count-Value) ". "; }

@@ -1,5 +1,6 @@
 .submit-btn {
-  margin-top: 20px; }
+  margin-top: 20px;
+  width: auto; }
 
 .criminals-list {
   width: 90%;

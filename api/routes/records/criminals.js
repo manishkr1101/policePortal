@@ -14,7 +14,13 @@ router.get("/", (req, res) => {
   });
 });
 
-router.get("/criminals/id", (req, res) => {});
+router.get("/:id", (req, res) => {
+  res.render("records/id", {
+    title: "Criminal History",
+    user: getUser(req),
+    css: "id"
+  });
+});
 
 router.post("/search", (req, res) => {
   let form = new formidable.IncomingForm();
