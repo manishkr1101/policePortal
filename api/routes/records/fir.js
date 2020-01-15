@@ -18,6 +18,14 @@ router.get("/", (req, res) => {
 
 });
 
+router.get("/:fir-number", (req, res) => {
+  res.render("records/fir-number", {
+    title: "fir-content",
+    user: getUser(req),
+    css: "fir-number"
+  });
+});
+
 function getUser(req) {
   return {
     name: (req.user && req.user.name) || "Manish",

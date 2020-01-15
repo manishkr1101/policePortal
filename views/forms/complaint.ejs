@@ -14,31 +14,31 @@
           <div class="col s6">
             <div class="input-field">
               <i class="material-icons prefix">person</i>
-              <input id="name" type="text" />
+              <input id="name" type="text" name="name" />
               <label for="name">Name</label>
             </div>
 
             <div class="input-field">
               <i class="material-icons prefix">email</i>
-              <input id="email" type="email" />
+              <input id="email" type="email" name="name"/>
               <label for="email">Email</label>
             </div>
 
             <div class="input-field">
               <i class="material-icons prefix">date_range</i>
-              <input id="dob" type="text" class="datepicker">
+              <input id="dob" type="text" class="datepicker" name="dob">
               <label for="dob">Date Of Birth</label>
             </div>
             <div class="input-field">
               <i class="material-icons prefix">location_city</i>
-              <textarea id="textarea1" class="materialize-textarea"></textarea>
+              <textarea id="textarea1" class="materialize-textarea" name="address"></textarea>
               <label for="textarea1">Address</label>
             </div>
           </div>
           <div class="col s6">
             <div class="input-field">
               <i class="material-icons prefix">wc</i>
-              <select>
+              <select name="sex">
                 <option value="" disabled selected>Choose your option</option>
                 <option value="male">Male</option>
                 <option value="female">Female</option>
@@ -49,13 +49,13 @@
 
             <div class="input-field">
               <i class="material-icons prefix">phone</i>
-              <input id="mobile" type="tel" />
+              <input id="mobile" type="tel" name="mobile"/>
               <label for="mobile">Phone Number</label>
             </div>
 
             <div class="input-field">
               <i class="material-icons prefix">vpn_key</i>
-              <input id="otp" type="number" maxlength="6" />
+              <input id="otp" type="number" maxlength="6" name="otp" />
               <label for="otp">OTP</label>
             </div>
           </div>
@@ -71,24 +71,24 @@
           <div class="col s6">
             <div class="input-field">
               <i class="material-icons prefix">subject</i>
-              <input id="subject" type="text" />
+              <input id="subject" type="text" name="subject"/>
               <label for="subject">Subject</label>
             </div>
             <div class="input-field">
               <i class="material-icons prefix">date_range</i>
-              <input id="doi" type="text" class="datepicker">
+              <input id="doi" type="text" class="datepicker" name="doi">
               <label for="doi">Date Of Incident</label>
             </div>
             <div class="input-field">
               <i class="material-icons prefix">assignment</i>
-              <textarea id="textarea2" class="materialize-textarea"></textarea>
+              <textarea id="textarea2" class="materialize-textarea" name="complaint"></textarea>
               <label for="textarea2">Write Complaint</label>
             </div>
           </div>
           <div class="col s6">
             <div class="input-field">
               <i class="material-icons prefix">query_builder</i>
-              <input id="toi" type="time" />
+              <input id="toi" type="time" name="toi" />
               <label for="toi">Time Of Incident</label>
             </div>
           </div>
@@ -104,7 +104,7 @@
           <div class="file-field input-field">
             <div class="btn">
               <span>File</span>
-              <input type="file" required />
+              <input type="file" required name="signature"/>
             </div>
             <div class="file-path-wrapper">
               <input class="file-path validate" type="text" />
