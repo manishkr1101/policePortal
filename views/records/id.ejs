@@ -1,1 +1,88 @@
-<%- include('partials/header')%> <%- include('partials/footer')%>
+<%- include('partials/header')%>
+<section>
+  <div class="header">
+    <h2>Criminal History</h2>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="images">
+        <p>
+          <!-- <img src="/images/icon.png" alt="none found" /> -->
+          <img src="/images/download.jpg" alt="none found" />
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <fieldset>
+        <legend>
+          <h5>Criminal Details</h5>
+        </legend>
+        <table id="persondetails">
+          <tr>
+            <td>Criminal ID:</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Name:</td>
+            <td></td>
+            <td>Sex:</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Date of Birth:</td>
+            <td></td>
+            <td>Phone No.:</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>
+              State:
+            </td>
+            <td></td>
+            <td>District:</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Local Area:</td>
+            <td></td>
+          </tr>
+        </table>
+      </fieldset>
+      <fieldset>
+        <legend>
+          <h5>Crime History</h5>
+        </legend>
+        <table id="crime">
+          <thead>
+            <tr>
+              <th>S.No.</th>
+              <th>Crime Type</th>
+              <th>Crime Subtype</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td></td>
+              <td>Theft</td>
+              <td>Mobile Theft</td>
+              <td>Mobile was lost today</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="addcrime">
+          <button
+            class="btn waves-effect waves-light submit-btn"
+            type="submit"
+            name="action"
+          >
+            <i class="material-icons right">add</i>
+            Add crime
+          </button>
+        </div>
+      </fieldset>
+    </div>
+  </div>
+</section>
+
+<%- include('partials/footer')%>

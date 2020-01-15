@@ -1,0 +1,40 @@
+.header {
+  text-align: center;
+}
+.addcrime {
+  float: right;
+  margin-top: 20px;
+}
+tr {
+  border-bottom: none;
+}
+
+$i: 1;
+section #persondetails tr td:nth-child(#{$i + 0}) {
+  font-weight: 500;
+  width: 20%;
+}
+section #persondetails tr td:nth-child(#{$i + 1}) {
+  width: 20%;
+}
+section #persondetails tr td:nth-child(#{$i + 2}) {
+  font-weight: 500;
+  width: 20%;
+}
+section #persondetails tr td:nth-child(#{$i + 3}) {
+  width: 30%;
+}
+.images {
+  text-align: center;
+}
+.images img {
+  height: 150px;
+  width: 150px;
+}
+body {
+  counter-reset: Count-Value;
+}
+section #crime tr td:first-child:before {
+  counter-increment: Count-Value;
+  content: counter(Count-Value) ". ";
+}

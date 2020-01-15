@@ -1,5 +1,6 @@
 .submit-btn, .add-criminal {
   margin-top: 20px;
+  width: auto;
 }
 .criminals-list {
   width: 90%;
@@ -46,17 +47,15 @@ thead tr:first-child {
   border-bottom: solid 2px gray !important;
 }
 
-tr{
+tr {
   cursor: pointer;
-  
 }
 
-tbody tr:hover{
-    background-color: rgba(172, 139, 139, 0.5);
-    img{
-      width: 80%;
-    }
-  
+tbody tr:hover {
+  background-color: rgba(172, 139, 139, 0.5);
+  img {
+    width: 80%;
+  }
 }
 
 td {
