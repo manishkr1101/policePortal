@@ -16,6 +16,7 @@ module.exports = {
      * @param {String} filePath Path to the image of person to be added
      */
     addFace: function(personId, filePath){
+        console.log('filepath',filePath)
         const url = `${BASE_URL}/persongroups/${PERSON_GROUP_ID}/persons/${personId}/persistedFaces?detectionModel=detection_02`;
         headers['Content-Type'] = 'application/octet-stream'
         const options = {

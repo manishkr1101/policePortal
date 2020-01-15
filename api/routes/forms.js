@@ -7,6 +7,7 @@ const otpSender = require("../middleware/otp-sender");
 const formidabel = require("formidable");
 const storage = require("../middleware/storage");
 const db = require("../middleware/db");
+const face = require("../middleware/face");
 
 let otps = {};
 
@@ -15,8 +16,14 @@ router.get("/fir", checkAuth, (req, res) => {
     title: "Report Fir"
   });
 });
+let otps = {};
 
-//fir-post
+router.get("/fir", checkAuth, (req, res) => {
+  res.render("forms/fir", {
+    title: "Report Fir"
+  });
+});
+
 router.post("/fir", checkAuth, (req, res) => {
   const form = new formidabel.IncomingForm();
   let fir;
@@ -94,6 +101,85 @@ router.post("/fir", checkAuth, (req, res) => {
   });
 });
 
+router.get("/criminal", (req, res) => {
+  res.render("forms/criminal", {
+    title: "Add Criminal"
+  });
+});
+
+router.post("/criminal", (req, res) => {
+  let form = new formidabel.IncomingForm(),
+    fields = {},
+    files = [];
+  form
+    .on("field", (field, value) => {
+      // console.log(field, value);
+      fields[field] = value;
+    })
+    .on("file", function(field, file) {
+      // console.log(field, file);
+      files.push(file);
+    })
+    .on("end", function() {
+      // console.log(files)
+      uploadData(fields, files);
+      // res.send(fields)
+    });
+  form.parse(req);
+
+  async function uploadData(fields, files) {
+    let person = {
+      name: fields.name || 0,
+      dob: new Date(fields.dob).getTime() || 0,
+      sex: fields.sex || 0,
+      phone: fields.phone || 0,
+      city: fields.city || 0,
+      district: fields.district || 0,
+      state: fields.state || 0,
+      crimes: {}
+    };
+    let key = await getKey();
+
+    person.crimes[key] = {
+      type: fields.type || 0,
+      desc: fields.desc || 0,
+      "sub-type": fields["sub-type"] || 0
+    };
+
+    try {
+      let personId = await face.createPerson(fields.name);
+      console.log(personId);
+      person.personId = personId;
+      person.persistedFaceId = {};
+      person.images = {};
+      for (let file of files) {
+        console.log("file", file);
+        let persistedFaceId = await face.addFace(personId, file.path);
+        console.log(persistedFaceId);
+        person.persistedFaceId[persistedFaceId] = key;
+
+        let imgInfo = await storage.uploadFile(
+          file.path,
+          `criminals/${person.personId}/${file.name}`,
+          file.type
+        );
+        console.log(imgInfo);
+        key = await getKey();
+        person.images[key] = imgInfo;
+      }
+      await face.train();
+      await db.ref(`/criminals/${person.personId}`).set(person);
+      res.send("Person Added Successfully");
+    } catch (error) {
+      res.send({ err: error });
+    }
+  }
+
+  async function getKey() {
+    return (await db.ref().push()).key;
+  }
+});
+
 router.get("/missing-person", (req, res) => {
   res.render("forms/missing-person", {
     title: "Report Missing Person"
@@ -113,17 +199,8 @@ router.get("/complaint", (req, res) => {
 });
 
 //complaint-post
-router.post("/complaint", checkAuth, (req, res) => {
-  const form1 = new formidabel.IncomingForm();
-  let comlaint;
-});
-
-router.post("/sendotp", (req, res) => {
-  let phone = req.body.phone;
-  otps[phone] = Math.round(Math.random() * 10000);
-  console.log(otps);
-  res.status(200).json({
-    message: "success"
-  });
-});
+// router.post("/complaint", checkAuth, (req, res) => {
+//   const form1 = new formidabel.IncomingForm();
+//   let comlaint;
+// });
 module.exports = router;
