@@ -30,10 +30,7 @@
             <i class="material-icons right">arrow_forward</i>
           </button>
         </div>
-<<<<<<< HEAD
-        
-=======
->>>>>>> c2dfaa55f5c9487c9223c383271ca14078c76dcd
+
       </form>
       <div class="col s2">
         <a href="/form/criminal" class="btn waves-effect waves-light add-criminal">Add Criminal</a>
@@ -61,12 +58,12 @@
           <tr data-target="<%= criminal.name %>" class="wave-effect">
             <td></td>
             <td><strong><a href="/criminal/<%= criminal.personId %>"><%= criminal.name %></a></strong></td>
-            <td>20</td>
-            <td>Male</td>
-            <td>Sheikhpura</td>
-            <td>Bihar</td>
+            <td><%= criminal.age %></td>
+            <td><%= criminal.sex %></td>
+            <td><%= criminal.district %></td>
+            <td><%= criminal.state %></td>
             <td>
-              <img src="/images/icon.png" alt="muttu swami" />
+              <img src="<%= criminal.url %>" alt="<%= criminal.name %>" />
             </td>
           </tr>
           <% } %> <% }%>

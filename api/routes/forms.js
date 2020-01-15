@@ -16,13 +16,7 @@ router.get("/fir", checkAuth, (req, res) => {
     title: "Report Fir"
   });
 });
-let otps = {};
 
-router.get("/fir", checkAuth, (req, res) => {
-  res.render("forms/fir", {
-    title: "Report Fir"
-  });
-});
 
 router.post("/fir", checkAuth, (req, res) => {
   const form = new formidabel.IncomingForm();

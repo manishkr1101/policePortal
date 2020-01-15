@@ -18,7 +18,7 @@ router.get("/", (req, res) => {
 
 });
 
-router.get("/:fir-number", (req, res) => {
+router.get("/:firNumber", (req, res) => {
   res.render("records/fir-number", {
     title: "fir-content",
     user: getUser(req),
