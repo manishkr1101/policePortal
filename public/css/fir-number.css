@@ -5,6 +5,9 @@
   float: right;
   margin-top: 20px; }
 
+.date {
+  float: left; }
+
 tr {
   border-bottom: none; }
 

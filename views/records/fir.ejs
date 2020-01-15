@@ -38,31 +38,26 @@
           <tr>
             <th>S.No.</th>
             <th>FIR no.</th>
-            <th>District</th>
-            <th>State</th>
-            <th>Verify</th>
+            <th>Name</th>
+            <th>Gender</th>
+            <th>Phone No.</th>
+            <th>Status</th>
+            <th>View</th>
           </tr>
         </thead>
 
         <tbody>
+          <% for(let fir of firs){ %>
           <tr>
             <td></td>
-            <td>FIR no.</td>
-            <td>District</td>
-            <td>State</td>
-            <td>
-              <p>
-                <label>
-                  <input class="with-gap" name="group1" type="radio" />
-                  <span>Accept</span>
-                </label>
-                <label>
-                  <input class="with-gap" name="group1" type="radio" />
-                  <span>Reject</span>
-                </label>
-              </p>
-            </td>
+            <td><%= fir['fir-no'] %></td>
+            <td><%= fir.complainant['name'] %></td>
+            <td><%= fir.complainant['sex'] %></td>
+            <td><%= fir.complainant['phone'] %></td>
+            <td><%= fir['status'] %></td>
+            <td><a href="/fir/<%= fir['fir-no'] %>">view</a></td>
           </tr>
+          <% } %>
         </tbody>
       </table>
     </div>

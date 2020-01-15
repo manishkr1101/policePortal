@@ -21,19 +21,31 @@
         <div class="name col s4">
           <div class="input-field">
             <i class="material-icons prefix">search</i>
-            <input placeholder="Search by Name" id="query" type="search" class="validate" />
+            <input
+              placeholder="Search by Name"
+              id="query"
+              type="search"
+              class="validate"
+            />
           </div>
         </div>
         <div class="col s2">
-          <button class="btn waves-effect waves-light submit-btn" type="submit" name="search">
+          <button
+            class="btn waves-effect waves-light submit-btn"
+            type="submit"
+            name="search"
+          >
             Search
             <i class="material-icons right">arrow_forward</i>
           </button>
         </div>
-        
       </form>
       <div class="col s2">
-        <a href="/form/criminal" class="btn waves-effect waves-light add-criminal">Add Criminal</a>
+        <a
+          href="/form/criminal"
+          class="btn waves-effect waves-light add-criminal"
+          >Add Criminal</a
+        >
       </div>
     </div>
   </div>
@@ -57,7 +69,13 @@
           criminals){ %>
           <tr data-target="<%= criminal.name %>" class="wave-effect">
             <td></td>
-            <td><strong><a href="/criminal/<%= criminal.personId %>"><%= criminal.name %></a></strong></td>
+            <td>
+              <strong
+                ><a href="/criminal/<%= criminal.personId %>"
+                  ><%= criminal.name %></a
+                ></strong
+              >
+            </td>
             <td>20</td>
             <td>Male</td>
             <td>Sheikhpura</td>

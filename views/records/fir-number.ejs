@@ -12,23 +12,23 @@
         <table>
           <tr>
             <td>Fir-Number:</td>
-            <td></td>
+            <td><%= fir['fir-no']%></td>
           </tr>
           <tr>
             <td>Name:</td>
-            <td></td>
+            <td><%= fir.complainant['name']%></td>
             <td>Sex:</td>
-            <td></td>
+            <td><%= fir.complainant['sex']%></td>
           </tr>
           <tr>
             <td>Email:</td>
-            <td></td>
+            <td><%= fir.complainant['email']%></td>
             <td>Phone No.:</td>
-            <td></td>
+            <td><%= fir.complainant['phone']%></td>
           </tr>
           <tr>
             <td>Date of Birth:</td>
-            <td></td>
+            <td><%= fir.complainant['dob']%></td>
           </tr>
         </table>
       </fieldset>
@@ -39,27 +39,27 @@
         <table>
           <tr>
             <td>Present State:</td>
-            <td></td>
+            <td><%= fir.complainant.address['state']%></td>
             <td>Present District:</td>
-            <td></td>
+            <td><%= fir.complainant.address['district']%></td>
           </tr>
           <tr>
             <td>Present Village/Town/City:</td>
             <td></td>
             <td>Police Station:</td>
-            <td></td>
+            <td><%= fir.complainant.address['ps']%></td>
           </tr>
           <tr>
             <td>Permanent State:</td>
-            <td></td>
+            <td><%= fir.complainant['perm-address']['state']%></td>
             <td>Permanent District:</td>
-            <td></td>
+            <td><%= fir.complainant['perm-address']['district']%></td>
           </tr>
           <tr>
             <td>Permanent Village/Town/City:</td>
             <td></td>
             <td>Police Station:</td>
-            <td></td>
+            <td><%= fir.complainant['perm-address']['ps']%></td>
           </tr>
         </table>
       </fieldset>
@@ -70,19 +70,19 @@
         <table>
           <tr>
             <td>Nature of Complaint:</td>
-            <td></td>
+            <td><%= fir['nature-of-complaint']%></td>
             <td>Crime Subtype:</td>
-            <td></td>
+            <td><%= fir['crime-sub-type']%></td>
           </tr>
           <tr>
             <td>Victim Present:</td>
-            <td></td>
+            <td><%= fir['is-victim-present']%></td>
             <td>Occurence Place Known:</td>
-            <td></td>
+            <td><%= fir['is-crime-scene']%></td>
           </tr>
           <tr>
             <td>FIR Content:</td>
-            <td></td>
+            <td><%= fir['content']%></td>
           </tr>
         </table>
       </fieldset>
@@ -91,12 +91,15 @@
         <table>
           <tr>
             <td>Complainant Signature:</td>
-            <td><img src="/images/download.jpg" /></td>
+            <td><img src="<%= fir.signature['url']%>" alt="none_found" /></td>
           </tr>
         </table>
       </fieldset>
     </div>
     <div class="row">
+      <div class="date">
+        <p><strong>Date: </strong><%= fir['date']%></p>
+      </div>
       <div class="verify">
         <button
           class="btn waves-effect waves-light submit-btn"
