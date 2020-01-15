@@ -6,13 +6,8 @@
   </div>
   <div class="inputs container">
     <div class="row">
-<<<<<<< HEAD
       <form action="" method="post" enctype="multipart/form-data">
         <div class="col s4 choose-file">
-=======
-      <form action="/criminal/id" method="post" enctype="multipart/form-data">
-        <div class="col s6 choose-file">
->>>>>>> 46382226098d195cf0ecb331a5dee129b42b4708
           <div class="file-field input-field">
             <div class="btn">
               <span>File</span>
@@ -26,24 +21,16 @@
         <div class="name col s4">
           <div class="input-field">
             <i class="material-icons prefix">search</i>
-            <input
-              placeholder="Search by Name"
-              id="query"
-              type="search"
-              class="validate"
-            />
+            <input placeholder="Search by Name" id="query" type="search" class="validate" />
           </div>
         </div>
         <div class="col s2">
-          <button
-            class="btn waves-effect waves-light submit-btn"
-            type="submit"
-            name="search"
-          >
+          <button class="btn waves-effect waves-light submit-btn" type="submit" name="search">
             Search
             <i class="material-icons right">arrow_forward</i>
           </button>
         </div>
+        
       </form>
       <div class="col s2">
         <a href="/form/criminal" class="btn waves-effect waves-light add-criminal">Add Criminal</a>
@@ -68,24 +55,9 @@
         <tbody>
           <% if(typeof criminals != 'undefined'){ %> <% for(let criminal of
           criminals){ %>
-<<<<<<< HEAD
-            <tr data-target="<%= criminal.name %>" class="wave-effect">
-              <td></td>
-              <td><strong><a href="/criminal/<%= criminal.personId %>"><%= criminal.name %></a></strong></td>
-              <td>20</td>
-              <td>Male</td>
-              <td>Sheikhpura</td>
-              <td>Bihar</td>
-              <td>
-                <img src="/images/icon.png" alt="muttu swami" />
-              </td>
-            </tr>
-=======
           <tr data-target="<%= criminal.name %>" class="wave-effect">
             <td></td>
-            <td>
-              <strong><a href="#"><%= criminal.name %></a></strong>
-            </td>
+            <td><strong><a href="/criminal/<%= criminal.personId %>"><%= criminal.name %></a></strong></td>
             <td>20</td>
             <td>Male</td>
             <td>Sheikhpura</td>
@@ -94,7 +66,6 @@
               <img src="/images/icon.png" alt="muttu swami" />
             </td>
           </tr>
->>>>>>> 46382226098d195cf0ecb331a5dee129b42b4708
           <% } %> <% }%>
         </tbody>
       </table>
