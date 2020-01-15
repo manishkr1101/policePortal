@@ -29,15 +29,16 @@ router.post("/fir", checkAuth, (req, res) => {
 		const date = (new Date()).getTime();
 
 		if (otpSender.verifyOTP(fields.phone, otp)) {
+			let dobDate = new Date(fields.dob);
 			fir = {
 				complainant: {
 					name: fields.name || '0',
 					email: fields.email || '0',
-					dob: (new Date(fields.dob)).getTime(),
+					dob: (dobDate).getTime(),
 					phone: fields.phone || '0',
 					sex: fields.sex || '0',
 					address: {
-						city: fields.city || '0',
+						address: fields.city || '0',
 						state: fields.state || '0',
 						district: fields.district || 0,
 						ps: fields.ps || 0
@@ -51,7 +52,8 @@ router.post("/fir", checkAuth, (req, res) => {
 				date: date,
 				'fir-no': date,
 				status: 'pending',
-				accepted: 0
+				accepted: 0,
+				psid: req.user.psid
 
 			}
 
@@ -59,7 +61,7 @@ router.post("/fir", checkAuth, (req, res) => {
 				fir.complainant['perm-address'] = fir.complainant.address
 			} else {
 				fir.complainant['perm-address'] = {
-					city: fields.permCity || 0,
+					address: fields.permCity || 0,
 					state: fields.permState || 0,
 					district: fields.permDistrict || 0,
 					ps: fields.permPs || 0

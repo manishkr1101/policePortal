@@ -2,13 +2,20 @@ const express = require("express");
 const router = express.Router();
 const passport = require("passport");
 const checkAuth = require("../../middleware/checkAuth");
+const fir = require('../../middleware/fir')
 
 router.get("/", (req, res) => {
-  res.render("records/fir", {
-    title: "Report Fir",
-    user: getUser(req),
-    css: "fir"
-  });
+  fir.getAllFirByPS('BR26003')
+    .then(firs => {
+      res.render("records/fir", {
+        title: "FIR",
+        user: getUser(req),
+        css: "fir",
+        firs: firs
+      });
+    })
+    .catch(err => res.send(err))
+
 });
 
 function getUser(req) {
