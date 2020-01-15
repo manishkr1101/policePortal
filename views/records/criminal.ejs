@@ -76,12 +76,12 @@
                 ></strong
               >
             </td>
-            <td>20</td>
-            <td>Male</td>
-            <td>Sheikhpura</td>
-            <td>Bihar</td>
+            <td><%= criminal.age %></td>
+            <td><%= criminal.sex %></td>
+            <td><%= criminal.district %></td>
+            <td><%= criminal.state %></td>
             <td>
-              <img src="/images/icon.png" alt="muttu swami" />
+              <img src="<%= criminal.url %>" alt="<%= criminal.name %>" />
             </td>
           </tr>
           <% } %> <% }%>

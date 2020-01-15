@@ -8,7 +8,10 @@
       <div class="images">
         <p>
           <!-- <img src="/images/icon.png" alt="none found" /> -->
-          <img src="/images/download.jpg" alt="none found" />
+          <% for(let url of criminal.images){ %>
+            <img src="<%= url %>" alt="none found" />
+          <% } %>
+          
         </p>
       </div>
     </div>
@@ -19,31 +22,31 @@
         </legend>
         <table id="persondetails">
           <tr>
-            <td colspan="2">Criminal ID: hkjhkhk-hkjkjh7-887bjb</td>
+            <td colspan="2">Criminal ID: <%= criminal.personId %></td>
           </tr>
           <tr>
             <td>Name:</td>
-            <td>Manish Kumar</td>
+            <td><%= criminal.name %></td>
             <td>Sex:</td>
-            <td>Male</td>
+            <td><%= criminal.sex %></td>
           </tr>
           <tr>
             <td>Date of Birth:</td>
-            <td>11 Jan 2000</td>
+            <td><%= criminal.dob %></td>
             <td>Phone No.:</td>
-            <td>8340247596</td>
+            <td><%= criminal.phone %></td>
           </tr>
           <tr>
             <td>
               State:
             </td>
-            <td>Bihar</td>
+            <td><%= criminal.state %></td>
             <td>District:</td>
-            <td>Sheikhpura</td>
+            <td><%= criminal.district %></td>
           </tr>
           <tr>
             <td>Local Area:</td>
-            <td></td>
+            <td><%= criminal.city %></td>
           </tr>
         </table>
       </fieldset>
@@ -61,12 +64,15 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td></td>
-              <td>Theft</td>
-              <td>Mobile Theft</td>
-              <td>Mobile was lost today</td>
-            </tr>
+            <% for(let crime of crimes){ %>
+              <tr>
+                <td></td>
+                <td><%= crime.type %></td>
+                <td><%= crime['sub-type'] %></td>
+                <td><%= crime.desc %></td>
+              </tr>
+            <% } %>
+            
           </tbody>
         </table>
         <div class="addcrime">
