@@ -1,375 +1,311 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>NCRA</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
-    <!-- styles -->
-    <link href="assets/css/bootstrap.css" rel="stylesheet" />
-    <link href="assets/css/bootstrap-responsive.css" rel="stylesheet" />
-    <link href="assets/css/prettyPhoto.css" rel="stylesheet" />
-    <link href="assets/css/animate.css" rel="stylesheet" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Noto+Serif:400,700,400italic|Roboto+Condensed:400,300,700"
-      rel="stylesheet"
-    />
 
-    <link href="assets/css/style.css" rel="stylesheet" />
-    <link href="assets/color/default.css" rel="stylesheet" />
+<head>
+  <meta charset="utf-8" />
+  <title>NCRA</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <!-- styles -->
+  <link href="assets/css/bootstrap.css" rel="stylesheet" />
+  <link href="assets/css/bootstrap-responsive.css" rel="stylesheet" />
+  <link href="assets/css/prettyPhoto.css" rel="stylesheet" />
+  <link href="assets/css/animate.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Noto+Serif:400,700,400italic|Roboto+Condensed:400,300,700"
+    rel="stylesheet" />
 
-    <link
-      rel="apple-touch-icon-precomposed"
-      sizes="144x144"
-      href="ico/apple-touch-icon-144-precomposed.png"
-    />
-    <link
-      rel="apple-touch-icon-precomposed"
-      sizes="114x114"
-      href="ico/apple-touch-icon-114-precomposed.png"
-    />
-    <link
-      rel="apple-touch-icon-precomposed"
-      sizes="72x72"
-      href="ico/apple-touch-icon-72-precomposed.png"
-    />
-    <link
-      rel="apple-touch-icon-precomposed"
-      href="ico/apple-touch-icon-57-precomposed.png"
-    />
-    <link rel="shortcut icon" href="ico/favicon.ico" />
-    <style>
-      /* width */
-      ::-webkit-scrollbar {
-        width: 10px;
-      }
-      
-      /* Track */
-      ::-webkit-scrollbar-track {
-        box-shadow: inset 0 0 5px black; 
-        /* border-radius: 10px; */
-        background: black;
-      }
-       
-      /* Handle */
-      ::-webkit-scrollbar-thumb {
-        background:white; 
-        border-radius: 10px;
-      }
-      
-      /* Handle on hover */
-      ::-webkit-scrollbar-thumb:hover {
-        background:rgb(106, 188, 243); 
-      }
-      </style>
-  </head>
+  <link href="assets/css/style.css" rel="stylesheet" />
+  <link href="assets/color/default.css" rel="stylesheet" />
 
-  <body>
-    <header>
-      <!-- start top -->
-      <div id="topnav" class="navbar navbar-fixed-top default">
-        <div class="navbar-inner">
-          <div class="container">
-            <div class="logo">
-              <a href="/"
-                ><img src="images/icon.png" height="50px" width="50px" alt=""
-              /></a>
-            </div>
-            <div class="logo">
-              <h1>National Crime records agency</h1>
-            </div>
-            <div class="navigation">
-              <nav>
-                <ul class="nav pull-right">
-                  <li class="current"><a href="#intro">Home</a></li>
-                  <li><a href="#services">Services</a></li>
-                  <li><a href="#works">Forms</a></li>
-                  <li><a href="#about">About</a></li>
-                  <!-- <li><a href="#contact">Contact</a></li> -->
-                  <li class="dropdown">
-                    <a href="#">Features <i class="icon-angle-down"></i></a>
-                    <!-- <ul class="dropdown-menu">
-                      <li>
-                        <a href="components.html" class="external"
-                          >Components</a
-                        >
-                      </li>
-                      <li><a href="icons.html" class="external">Icons</a></li>
-                      <li>
-                        <a href="animations.html" class="external"
-                          >56 Animations</a
-                        >
-                      </li>
-                    </ul> --> 
-                    <threebox-address data-address='0xa8ee0babe72cd9a80ae45dd74cd3eae7a82fd5d1'></threebox-address>
-                  </li>
-                </ul>
-              </nav>
-            </div>
-            <!--/.nav-collapse -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="ico/apple-touch-icon-144-precomposed.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="ico/apple-touch-icon-114-precomposed.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="ico/apple-touch-icon-72-precomposed.png" />
+  <link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-57-precomposed.png" />
+  <link rel="shortcut icon" href="ico/favicon.ico" />
+  <style>
+    /* width */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+      box-shadow: inset 0 0 5px black;
+      /* border-radius: 10px; */
+      background: black;
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+      background: white;
+      border-radius: 10px;
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgb(106, 188, 243);
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <!-- start top -->
+    <div id="topnav" class="navbar navbar-fixed-top default">
+      <div class="navbar-inner">
+        <div class="container">
+          <div class="logo">
+            <a href="/"><img src="images/icon.png" height="50px" width="50px" alt="" /></a>
           </div>
+          <div class="logo">
+            <h1>National Crime records agency</h1>
+          </div>
+          <div class="navigation">
+            <nav>
+              <ul class="nav pull-right">
+                <li class="current"><a href="#intro">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#works">Forms</a></li>
+                <li><a href="#about">About</a></li> 
+                <!-- <li><a href="#contact">Contact</a></li> -->
+                <li class="dropdown">
+                  <a href="#"><%= ps.name %> <i class="icon-angle-down"></i></a>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a href="#" class="external"><%= ps.username %></a>
+                    </li>
+                    <li><a href="/logout" class="external">Logout</a></li>
+                    
+                  </ul>
+                  <threebox-address data-address='0xa8ee0babe72cd9a80ae45dd74cd3eae7a82fd5d1'></threebox-address>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <!--/.nav-collapse -->
         </div>
       </div>
-      <!-- end top -->
-    </header>
-    <!-- section intro -->
-    <section id="intro">
-      <div class="slogan">
-        <div class="icon">
-          <i class="icon-beaker icon-10x"></i>
-        </div>
-        <h1>Welcome to <span>National Crime Records Agency</span></h1>
-        <h2><b>Protect with honor, serve with pride</b></h2>
+    </div>
+    <!-- end top -->
+  </header>
+  <!-- section intro -->
+  <section id="intro">
+    <div class="slogan">
+      <div class="icon">
+        <i class="icon-beaker icon-10x"></i>
       </div>
-    </section>
-    <!-- end intro -->
-    <!-- Section about -->
-    <!-- section services -->
-    <section id="services" class="section parallax dark">
-      <div class="container">
-        <div class="row">
-          <div class="span12">
-            <div class="heading">
-              <h3><span>Our services</span></h3>
-            </div>
-            <div class="sub-heading">
-              <p>
-                Gangs show there colors so we show ours red and blues all the way.
-              </p>
-            </div>
+      <h1>Welcome to <span>National Crime Records Agency</span></h1>
+      <h2><b>Protect with honor, serve with pride</b></h2>
+    </div>
+  </section>
+  <!-- end intro -->
+  <!-- Section about -->
+  <!-- section services -->
+  <section id="services" class="section parallax dark">
+    <div class="container">
+      <div class="row">
+        <div class="span12">
+          <div class="heading">
+            <h3><span>Our services</span></h3>
           </div>
-        </div>
-        <div class="row">
-          <div class="span3">
-            <div class="box aligncenter">
-              <div class="halftop">
-                <h4><strong>FIR Management</strong></h4>
-                <!-- <i class="icon-desktop icon-4x"></i>-->
-                <img src="images/fir.jpg" width="55px" height="55px" />
-              </div>
-              <p>
-                View and manage recorded FIRs/ New FIRs
-              </p>
-              <a href="/fir" class="btn btn-theme">View</a>
-            </div>
-          </div>
-          <div class="span3">
-            <div class="box aligncenter">
-              <div class="halftop">
-                <h4><strong>Criminal Records</strong></h4>
-                <!--<i class="icon-briefcase icon-4x"></i>-->
-                <img src="images/download.jpg" width="51px" height="51px" />
-              </div>
-              <p>
-                View/Manage records of added criminals/cases
-              </p>
-              <a href="/criminal" class="btn btn-theme">View</a>
-            </div>
-          </div>
-          <div class="span3">
-            <div class="box aligncenter">
-              <div class="halftop">
-                <h4><strong>Complaint Management</strong></h4>
-                <img src="images/complain.jpg" width="55px" height="55px" />
-                <!-- <i class="icon-mobile-phone icon-4x"></i>-->
-              </div>
-              <p>
-                View and Manage complaints recorded/added
-              </p>
-              <a href="/complaint" class="btn btn-theme">View</a>
-            </div>
-          </div>
-          <div class="span3">
-            <div class="box aligncenter">
-              <div class="halftop">
-                <h4><strong>Form Verification</strong></h4>
-                <img src="images/verify.png" width="55px" height="55px" />
-                <!-- <i class="icon-mobile-phone icon-4x"></i>-->
-              </div>
-              <p>
-                Verify the requests for NOCs, Tenants/Employees
-              </p>
-              <a href="#" class="btn btn-theme">View</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- end section services -->
-    <!-- section works -->
-    <section id="works" class="section gray-bg">
-      <div class="container">
-        <div class="row">
-          <div class="span12">
-            <div class="heading">
-              <h3><span>Form Filling</span></h3>
-            </div>
-            <div class="sub-heading">
-              <p>
-                Lodge FIR, Complaint etc.
-              </p>
-            </div>
+          <div class="sub-heading">
+            <p>
+              Gangs show there colors so we show ours red and blues all the way.
+            </p>
           </div>
         </div>
       </div>
       <div class="row">
+        <div class="span3">
+          <div class="box aligncenter">
+            <div class="halftop">
+              <h4><strong>FIR Management</strong></h4>
+              <!-- <i class="icon-desktop icon-4x"></i>-->
+              <img src="images/fir.jpg" width="55px" height="55px" />
+            </div>
+            <p>
+              View and manage recorded FIRs/ New FIRs
+            </p>
+            <a href="/fir" class="btn btn-theme">View</a>
+          </div>
+        </div>
+        <div class="span3">
+          <div class="box aligncenter">
+            <div class="halftop">
+              <h4><strong>Criminal Records</strong></h4>
+              <!--<i class="icon-briefcase icon-4x"></i>-->
+              <img src="images/download.jpg" width="51px" height="51px" />
+            </div>
+            <p>
+              View/Manage records of added criminals/cases
+            </p>
+            <a href="/criminal" class="btn btn-theme">View</a>
+          </div>
+        </div>
+        <div class="span3">
+          <div class="box aligncenter">
+            <div class="halftop">
+              <h4><strong>Complaint Management</strong></h4>
+              <img src="images/complain.jpg" width="55px" height="55px" />
+              <!-- <i class="icon-mobile-phone icon-4x"></i>-->
+            </div>
+            <p>
+              View and Manage complaints recorded/added
+            </p>
+            <a href="/complaint" class="btn btn-theme">View</a>
+          </div>
+        </div>
+        <div class="span3">
+          <div class="box aligncenter">
+            <div class="halftop">
+              <h4><strong>Form Verification</strong></h4>
+              <img src="images/verify.png" width="55px" height="55px" />
+              <!-- <i class="icon-mobile-phone icon-4x"></i>-->
+            </div>
+            <p>
+              Verify the requests for NOCs, Tenants/Employees
+            </p>
+            <a href="#" class="btn btn-theme">View</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end section services -->
+  <!-- section works -->
+  <section id="works" class="section gray-bg">
+    <div class="container">
+      <div class="row">
         <div class="span12">
-          <ul type="none">
-            <li class="active"><a href="form/fir" class="btn btn-theme">Report FIR</a></li><br>
-            <li class="web"><a href="form/complaint" class="btn btn-theme">Report Complain</a></li><br>
-            <li class="brand"><a href="form/missing-person.ejs" class="btn btn-theme">Report Missing Person</a></li><br>
-            <li class="graphic"><a href="form/lost-vehicle.ejs" class="btn btn-theme">Report Lost Vehicle</a></li>
-          </ul>
-          <div class="clear">
+          <div class="heading">
+            <h3><span>Form Filling</span></h3>
           </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- <section id="about"> -->
-    <section id="about" class="section">
-      <div class="container">
-        <div class="row">
-          <div class="span12">
-            <div class="heading">
-              <h3><span>About us</span></h3>
-            </div>
-            <div class="sub-heading">
-              <p>
-                We Serve our Community! We Protect our Citizens! United we stand, Divided we fall. Justice will be served! 
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="span3">
-            <img
-              src="assets/img/dummies/team1.jpg"
-              alt=""
-              class="img-polaroid"
-            />
-            <div class="roles">
-              <h5><strong>Baby Stewards Jr</strong></h5>
-              <p>
-                CEO - Founder
-              </p>
-              <ul class="social-profile">
-                <li>
-                  <a href="#"
-                    ><i class="icon-facebook icon-32 icon-circled"></i
-                  ></a>
-                </li>
-                <li>
-                  <a href="#"
-                    ><i class="icon-twitter icon-32 icon-circled"></i
-                  ></a>
-                </li>
-                <li>
-                  <a href="#"
-                    ><i class="icon-linkedin icon-32 icon-circled"></i
-                  ></a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="span3">
-            <img
-              src="assets/img/dummies/team2.jpg"
-              alt=""
-              class="img-polaroid"
-            />
-            <div class="roles">
-              <h5><strong>Tommy Kreunichev</strong></h5>
-              <p>
-                Lead designer
-              </p>
-              <ul class="social-profile">
-                <li>
-                  <a href="#"
-                    ><i class="icon-facebook icon-32 icon-circled"></i
-                  ></a>
-                </li>
-                <li>
-                  <a href="#"
-                    ><i class="icon-twitter icon-32 icon-circled"></i
-                  ></a>
-                </li>
-                <li>
-                  <a href="#"
-                    ><i class="icon-linkedin icon-32 icon-circled"></i
-                  ></a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="span3">
-            <img
-              src="assets/img/dummies/team3.jpg"
-              alt=""
-              class="img-polaroid"
-            />
-            <div class="roles">
-              <h5><strong>Moriella Maccini</strong></h5>
-              <p>
-                Customer support
-              </p>
-              <ul class="social-profile">
-                <li>
-                  <a href="#"
-                    ><i class="icon-facebook icon-32 icon-circled"></i
-                  ></a>
-                </li>
-                <li>
-                  <a href="#"
-                    ><i class="icon-twitter icon-32 icon-circled"></i
-                  ></a>
-                </li>
-                <li>
-                  <a href="#"
-                    ><i class="icon-linkedin icon-32 icon-circled"></i
-                  ></a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="span3">
-            <img
-              src="assets/img/dummies/team4.jpg"
-              alt=""
-              class="img-polaroid"
-            />
-            <div class="roles">
-              <h5><strong>Brian James Scoothie</strong></h5>
-              <p>
-                Coffee maker
-              </p>
-              <ul class="social-profile">
-                <li>
-                  <a href="#"
-                    ><i class="icon-facebook icon-32 icon-circled"></i
-                  ></a>
-                </li>
-                <li>
-                  <a href="#"
-                    ><i class="icon-twitter icon-32 icon-circled"></i
-                  ></a>
-                </li>
-                <li>
-                  <a href="#"
-                    ><i class="icon-linkedin icon-32 icon-circled"></i
-                  ></a>
-                </li>
-              </ul>
-            </div>
+          <div class="sub-heading">
+            <p>
+              Lodge FIR, Complaint etc.
+            </p>
           </div>
         </div>
       </div>
-    </section>
-    <!-- end section about -->
-    <!-- section works -->
-    <!-- section contact -->
-    <!-- <section id="contact" class="section">
+    </div>
+    <div class="row">
+      <div class="span12">
+        <ul type="none">
+          <li class="active"><a href="form/fir" class="btn btn-theme">Report FIR</a></li><br>
+          <li class="web"><a href="form/complaint" class="btn btn-theme">Report Complain</a></li><br>
+          <li class="brand"><a href="form/missing-person.ejs" class="btn btn-theme">Report Missing Person</a></li><br>
+          <li class="graphic"><a href="form/lost-vehicle.ejs" class="btn btn-theme">Report Lost Vehicle</a></li>
+        </ul>
+        <div class="clear">
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+  <!-- <section id="about"> -->
+  <section id="about" class="section">
+    <div class="container">
+      <div class="row">
+        <div class="span12">
+          <div class="heading">
+            <h3><span>About us</span></h3>
+          </div>
+          <div class="sub-heading">
+            <p>
+              We Serve our Community! We Protect our Citizens! United we stand, Divided we fall. Justice will be served!
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span3">
+          <img src="assets/img/dummies/team1.jpg" alt="" class="img-polaroid" />
+          <div class="roles">
+            <h5><strong>Baby Stewards Jr</strong></h5>
+            <p>
+              Superintendent of police
+            </p>
+            <ul class="social-profile">
+              <li>
+                <a href="#"><i class="icon-facebook icon-32 icon-circled"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="icon-twitter icon-32 icon-circled"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="icon-linkedin icon-32 icon-circled"></i></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="span3">
+          <img src="assets/img/dummies/team2.jpg" alt="" class="img-polaroid" />
+          <div class="roles">
+            <h5><strong>Tommy Kreunichev</strong></h5>
+            <p>
+              Deputy Superintendent of Police
+            </p>
+            <ul class="social-profile">
+              <li>
+                <a href="#"><i class="icon-facebook icon-32 icon-circled"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="icon-twitter icon-32 icon-circled"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="icon-linkedin icon-32 icon-circled"></i></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="span3">
+          <img src="assets/img/dummies/team3.jpg" alt="" class="img-polaroid" />
+          <div class="roles">
+            <h5><strong>Moriella Maccini</strong></h5>
+            <p>
+              Inspector
+            </p>
+            <ul class="social-profile">
+              <li>
+                <a href="#"><i class="icon-facebook icon-32 icon-circled"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="icon-twitter icon-32 icon-circled"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="icon-linkedin icon-32 icon-circled"></i></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="span3">
+          <img src="assets/img/dummies/team4.jpg" alt="" class="img-polaroid" />
+          <div class="roles">
+            <h5><strong>Brian James Scoothie</strong></h5>
+            <p>
+              Sub Inspector
+            </p>
+            <ul class="social-profile">
+              <li>
+                <a href="#"><i class="icon-facebook icon-32 icon-circled"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="icon-twitter icon-32 icon-circled"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="icon-linkedin icon-32 icon-circled"></i></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end section about -->
+  <!-- section works -->
+  <!-- section contact -->
+  <!-- <section id="contact" class="section">
       <div class="container">
         <div class="row">
           <div class="span12">
@@ -395,7 +331,7 @@
               get in touch!
             </p>
              start contact form -->
-            <!-- <form action="" method="post" role="form" class="contactForm">
+  <!-- <form action="" method="post" role="form" class="contactForm">
               <div id="sendmessage">Your message has been sent. Thank you!</div>
               <div id="errormessage"></div>
 
@@ -546,52 +482,51 @@
         </div>
       </div>
     </section>-->
-    <!-- end section contact -->
+  <!-- end section contact -->
 
-    <footer>
-      <div class="verybottom">
-        <div class="container">
-          <div class="row">
-            <div class="span12">
-              <div class="aligncenter">
-                <!-- <div class="logo">
+  <footer>
+    <div class="verybottom">
+      <div class="container">
+        <div class="row">
+          <div class="span12">
+            <div class="aligncenter">
+              <!-- <div class="logo">
                 <a class="brand" href="index.html"><img src="assets/img/logo.png" alt="" /></a>
               </div> -->
-                <p>
-                  &copy; NCRA - All right reserved
-                </p>
-                <div class="credits">
-                  Created by <a href="#" title="yeah...">Manish Kumar JS lover</a>
-                </div>
+              <p>
+                &copy; NCRA - All right reserved
+              </p>
+              <div class="credits">
+                Created by <a href="#" title="yeah...">Manish Kumar JS lover</a>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </footer>
-    <a href="#" class="scrollup"
-      ><i class="icon-chevron-up icon-square icon-48 active"></i
-    ></a>
+    </div>
+  </footer>
+  <a href="#" class="scrollup"><i class="icon-chevron-up icon-square icon-48 active"></i></a>
 
-    <!-- Javascript Library Files -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/jquery.easing.js"></script>
-    <script src="assets/js/bootstrap.js"></script>
-    <script src="assets/js/parallax/jquery.parallax-1.1.3.js"></script>
-    <script src="assets/js/nagging-menu.js"></script>
-    <script src="assets/js/jquery.nav.js"></script>
-    <script src="assets/js/prettyPhoto/jquery.prettyPhoto.js"></script>
-    <script src="assets/js/portfolio/jquery.quicksand.js"></script>
-    <script src="assets/js/portfolio/setting.js"></script>
-    <script src="assets/js/hover/jquery-hover-effect.js"></script>
-    <script src="assets/js/jquery.scrollTo.min.js"></script>
-    <script src="assets/js/animate.js"></script>
+  <!-- Javascript Library Files -->
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/jquery.easing.js"></script>
+  <script src="assets/js/bootstrap.js"></script>
+  <script src="assets/js/parallax/jquery.parallax-1.1.3.js"></script>
+  <script src="assets/js/nagging-menu.js"></script>
+  <script src="assets/js/jquery.nav.js"></script>
+  <script src="assets/js/prettyPhoto/jquery.prettyPhoto.js"></script>
+  <script src="assets/js/portfolio/jquery.quicksand.js"></script>
+  <script src="assets/js/portfolio/setting.js"></script>
+  <script src="assets/js/hover/jquery-hover-effect.js"></script>
+  <script src="assets/js/jquery.scrollTo.min.js"></script>
+  <script src="assets/js/animate.js"></script>
 
-    <!-- Contact Form JavaScript File -->
-    <script src="contactform/contactform.js"></script>
+  <!-- Contact Form JavaScript File -->
+  <script src="contactform/contactform.js"></script>
 
-    <!-- Template Custom Javascript File -->
-    <script src="assets/js/custom.js"></script>
-    <script type="text/javascript" src="<https://unpkg.com/profile-hover>"></script>
-  </body>
+  <!-- Template Custom Javascript File -->
+  <script src="assets/js/custom.js"></script>
+  <script type="text/javascript" src="<https://unpkg.com/profile-hover>"></script>
+</body>
+
 </html>

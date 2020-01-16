@@ -122,6 +122,17 @@ module.exports = {
         })
         
     },
+    parseResponse: function(res, confidence){
+        let personIds = []
+        for(let r of res){
+            for(let cand of r.candidates){
+                if(cand.confidence > confidence){
+                    personIds.push(cand.personId)
+                }
+            }
+        }
+        return personIds;
+    },
     train: function(){
         const url = `${BASE_URL}/persongroups/${PERSON_GROUP_ID}/train`;
         const options = {

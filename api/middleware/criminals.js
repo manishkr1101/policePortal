@@ -23,5 +23,19 @@ module.exports = {
         catch(exc){
             throw exc
         }
+    },
+    getCriminalByIds: async function(criminalIds){
+        try{
+            let criminals = []
+            for(let criminalId of criminalIds){
+                let obj = await (await db.ref('/criminals/'+criminalId).once('value')).val()
+                if(obj)
+                    criminals.push(obj)
+            }
+            return criminals
+        }
+        catch(exc){
+            throw exc
+        }
     }
 }
