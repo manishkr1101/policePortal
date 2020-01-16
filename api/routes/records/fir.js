@@ -22,7 +22,7 @@ router.get("/", (req, res) => {
 
 router.get("/:firNumber", async (req, res) => {
   try {
-    const fir = await firs.getFirById("1579112798481");
+    const fir = await firs.getFirById(req.params.firNumber);
     console.log(fir);
     fir.date = date.getDate(fir.date);
     fir.complainant["dob"] = date.getDate(fir.complainant["dob"]);

@@ -54,7 +54,7 @@ module.exports = {
 
     },
     verifyOTP: function(phone, otp){
-        return true;
+        // return true;
         if(typeof otps[phone] != 'undefined' && otps[phone] == otp){
             delete otps[phone]
             return true
