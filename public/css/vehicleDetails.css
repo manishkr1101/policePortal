@@ -1,0 +1,15 @@
+.header {
+  text-align: center; }
+
+tr {
+  border-bottom: none; }
+
+tr td:nth-child(1) {
+  font-weight: 500; }
+
+tr td:nth-child(3) {
+  font-weight: 500; }
+
+img {
+  height: 200px;
+  width: 150px; }

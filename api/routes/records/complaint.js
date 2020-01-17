@@ -10,6 +10,14 @@ router.get("/", (req, res) => {
   });
 });
 
+// router.get("/:complainId", (req, res) => {
+//   res.render("records/complain-details", {
+//     title: "Complain-details",
+//     user: getUser(req),
+//     css: "complain-details"
+//   });
+// });
+
 function getUser(req) {
   return {
     name: (req.user && req.user.name) || "Manish",

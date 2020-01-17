@@ -32,7 +32,7 @@
           </tr>
         </table>
       </fieldset>
-      <fieldset>
+      <fieldset>+
         <legend>
           <h5>Address Details</h5>
         </legend>
@@ -76,9 +76,17 @@
           </tr>
           <tr>
             <td>Victim Present:</td>
-            <td><%= fir['is-victim-present']%></td>
+            <% if(fir['is-victim-present']==1){%>
+            <td>Present</td>
+            <%}else{%>
+            <td>Not Present</td>
+            <%}%>
             <td>Occurence Place Known:</td>
-            <td><%= fir['is-crime-scene']%></td>
+            <% if(fir['is-crime-scene']==1){%>
+            <td>Yes</td>
+            <% }else{%>
+            <td>No</td>
+            <%}%>
           </tr>
           <tr>
             <td>FIR Content:</td>

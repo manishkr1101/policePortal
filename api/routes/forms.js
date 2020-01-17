@@ -24,7 +24,7 @@ router.post("/fir", checkAuth, (req, res) => {
     let otp = fields.otp;
     const date = new Date().getTime();
 
-    if (otpSender.verifyOTP(fields.phone, otp)) {
+    if (otpSender.verifyOTP("91" + fields.phone, otp)) {
       fir = {
         complainant: {
           name: fields.name || "0",

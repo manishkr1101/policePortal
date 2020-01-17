@@ -11,6 +11,14 @@ router.get("/", (req, res) => {
   });
 });
 
+router.get("/:vehicleNo", (req, res) => {
+  res.render("records/vehicleDetails", {
+    title: "Vehicle-details",
+    user: getUser(req),
+    css: "vehicleDetails"
+  });
+});
+
 function getUser(req) {
   return {
     name: (req.user && req.user.name) || "Manish",
