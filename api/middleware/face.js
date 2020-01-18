@@ -3,7 +3,7 @@ const request = require('request')
 
 const API_KEY = process.env.FACE_DETECTION_API_KEY
 const BASE_URL = 'https://criminalfacerecognition.cognitiveservices.azure.com/face/v1.0';
-const PERSON_GROUP_ID = 'ncrbfinal'
+const PERSON_GROUP_ID = 'ncrbcriminal'
 
 let headers = {
     'Ocp-Apim-Subscription-Key': API_KEY
@@ -31,7 +31,10 @@ module.exports = {
                     reject(err)
                 }
                 body = JSON.parse(body)
-                resolve(body.persistedFaceId)
+                if(typeof body.persistedFaceId == 'undefined')
+                    reject("Can't add a face. Please try again ")
+                else
+                    resolve(body.persistedFaceId)
             })
         })
     },

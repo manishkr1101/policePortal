@@ -8,6 +8,11 @@
 tr {
   border-bottom: none; }
 
+span {
+  font-family: "Times New Roman", Times, serif;
+  font-size: larger;
+  font-weight: bold; }
+
 section #persondetails tr td:nth-child(1) {
   font-weight: 500;
   width: 20%; }

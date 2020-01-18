@@ -130,7 +130,7 @@ router.post("/criminal", (req, res) => {
       district: fields.district || 0,
       state: fields.state || 0,
       fathername: fields.fathername || 0,
-      rewards: fields.crimes.rewards || 0,
+      reward: fields.reward || 0,
       crimes: {}
     };
     let key = await getKey();
@@ -163,7 +163,7 @@ router.post("/criminal", (req, res) => {
 
         person.images[key] = imgInfo;
       }
-      await face.train();
+      face.train();
       await db.ref(`/criminals/${person.personId}`).set(person);
       res.send("Person Added Successfully");
     } catch (error) {

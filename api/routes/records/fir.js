@@ -30,6 +30,7 @@ router.get("/:firNumber", async (req, res) => {
     fir.date = date.getDateAndTime(fir.date);
     fir.complainant["dob"] = date.getDate(fir.complainant["dob"]);
     fir.signature.url = await storage.getSignedUrl(fir.signature.url);
+    console.log(fir.signature.url);
     res.render("records/fir-number", {
       title: "fir-content",
       user: getUser(req),
@@ -51,10 +52,11 @@ router.get("/:firNumber/accept", async (req, res) => {
   }
 });
 
-router.get("/:firNumber/reject", async (req, res) => {
+router.post("/:firNumber/reject", async (req, res) => {
   try {
     const firNo = req.params.firNumber;
-    await firs.rejectFir(firNo);
+    const rejectMsg = req.body.reason;
+    await firs.rejectFir(firNo, rejectMsg);
     res.redirect("/fir");
   } catch (error) {
     res.send({ err: error });

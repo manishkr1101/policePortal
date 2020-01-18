@@ -94,7 +94,8 @@ router.post("/search", (req, res) => {
   form.parse(req, (err, fields, files) => {
     const name = fields.name
     const image = files.image
-    if (image) {
+    if (image.size>0) {
+      console.log(image)
       searchByImage(image)
     }
     else {

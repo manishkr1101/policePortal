@@ -16,7 +16,8 @@ module.exports = {
     const params = querystring.stringify({
       message: msg,
       sender: "TXTLCL",
-      numbers: phone
+      numbers: phone,
+      test: true
     });
     const url = `https://api.textlocal.in/send/?apiKey=${process.env.TEXTLOCAL_API_KEY}&${params}`;
     // console.log(url)

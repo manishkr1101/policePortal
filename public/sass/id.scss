@@ -8,7 +8,11 @@
 tr {
   border-bottom: none;
 }
-
+span {
+  font-family: "Times New Roman", Times, serif;
+  font-size: larger;
+  font-weight: bold;
+}
 $i: 1;
 section #persondetails tr td:nth-child(#{$i + 0}) {
   font-weight: 500;
