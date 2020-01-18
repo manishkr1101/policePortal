@@ -51,7 +51,9 @@
             <td><%= vehicle['vehicle_regno']%></td>
             <td><%= vehicle['vehicle_engineno']%></td>
             <td><%= vehicle['vehicle_chasisno']%></td>
-            <td></td>
+            <td>
+              <a href="/lost-vehicle/<%= vehicle['vehicle_regno']%>">View</a>
+            </td>
           </tr>
           <%}%>
         </tbody>

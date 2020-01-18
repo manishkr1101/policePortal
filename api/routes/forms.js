@@ -129,6 +129,8 @@ router.post("/criminal", (req, res) => {
       city: fields.city || 0,
       district: fields.district || 0,
       state: fields.state || 0,
+      fathername: fields.fathername || 0,
+      rewards: fields.crimes.rewards || 0,
       crimes: {}
     };
     let key = await getKey();
@@ -158,7 +160,7 @@ router.post("/criminal", (req, res) => {
           file.type
         );
         console.log(imgInfo);
-        
+
         person.images[key] = imgInfo;
       }
       await face.train();
