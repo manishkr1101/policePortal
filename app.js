@@ -9,14 +9,15 @@ const passport = require("passport");
 const firebase = require("firebase/app");
 const db = require("./api/middleware/db");
 const checkAuth = require("./api/middleware/checkAuth");
+const storage = require("./api/middleware/storage");
 
 const session = require("express-session");
 
 app.use(express.static("public"));
-app.use(function(req, res, next){
-  process.stdout.write('ip '+req.ip)
+app.use(function(req, res, next) {
+  process.stdout.write("ip " + req.ip);
   next();
-})
+});
 app.use(morgan("dev"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -71,11 +72,10 @@ const createRoutes = require("./api/routes/createperson");
 const uploadRoutes = require("./api/routes/upload");
 const formsRoutes = require("./api/routes/forms");
 const recordsRoutes = require("./api/routes/records/records");
-const registerRoutes = require('./api/routes/police/register')
-const placesRoutes = require('./api/routes/places/places')
-const nocRoutes = require('./api/routes/nature-of-complaint')
-const otpRoutes = require('./api/routes/send-otp')
-
+const registerRoutes = require("./api/routes/police/register");
+const placesRoutes = require("./api/routes/places/places");
+const nocRoutes = require("./api/routes/nature-of-complaint");
+const otpRoutes = require("./api/routes/send-otp");
 
 app.use("/login", loginRoutes);
 app.use("/signup", signupRoutes);
@@ -85,16 +85,16 @@ app.use("/identify", identifyRoutes);
 app.use("/create", createRoutes);
 app.use("/upload", uploadRoutes);
 app.use("/form", formsRoutes);
-app.use('/', recordsRoutes)
-app.use('/register', registerRoutes)
-app.use('/places', placesRoutes)
-app.use('/nature-of-complaint', nocRoutes)
-app.use('/sendotp', otpRoutes)
+app.use("/", recordsRoutes);
+app.use("/register", registerRoutes);
+app.use("/places", placesRoutes);
+app.use("/nature-of-complaint", nocRoutes);
+app.use("/sendotp", otpRoutes);
 
 app.get("/", checkAuth, (req, res) => {
   console.log(req.user);
-  console.log(req.ip)
-  
+  console.log(req.ip);
+
   const options = {
     title: "Home",
     css: "styles",
@@ -109,7 +109,6 @@ app.get("/logout", checkAuth, (req, res) => {
 });
 
 app.get("/data", (req, res) => {
-
   // let obj = {
   //   BR26001: 'Pir Bahaur',
   //   BR26002: 'Beur',
@@ -117,11 +116,9 @@ app.get("/data", (req, res) => {
   //   BR26004: 'Kankarbagh',
   //   BR26005: 'Rajiv Nagar'
   // }
-
   // db.ref('/places/states/Bihar').update({
   //   Patna: obj
   // })
-  
   // db.ref()
   //   .once("value")
   //   .then(data => {
@@ -135,7 +132,6 @@ app.get("/data", (req, res) => {
   // }
   // let dist = 'Araria,Madhepura,Arwal,Madhubani,Aurangabad,Monghyr,Banka,Muzaffarpur,Begusarai,Nalanda,Bhagalpur,Nawada,Bhojpur,Patna,Buxar,Purnea,Darbhanga,Rohtas,East Champaran,Saharsa,Gaya,Samastipur,Gopalganj,Saran,Jamui,Shiekhpura,Jehanabad,Sheohar,Kaimur,Sitamarhi,Katihar,Siwan,Khagaria,Supaul,Kishanganj,Vaishali,Lakhisarai,West Champaran';
   // let dist = 'Agra,Aligarh,PrayagRaj,Ambedkar Nagar,Amroha,Auraiya,Azamgarh,Badaun,Bahraich,Ballia,Balrampur,Banda District,Barabanki,Bareilly,Basti,Bijnor,Bulandshahr,Chandauli(Varanasi Dehat),Chitrakoot,Deoria,Etah,Etawah,Faizabad,Farrukhabad,Fatehpur,Firozabad,Gautam Buddha Nagar,Ghaziabad,Ghazipur,Gonda,Gorakhpur,Hamirpur,Hapur District,Hardoi,Hathras,Jaunpur District,Jhansi,Kannauj,Kanpur Dehat,Kanpur Nagar,Kasganj,Kaushambi,Kushinagar,Lakhimpur Kheri,Lalitpur,Lucknow,Maharajganj,Mahoba,Mainpuri,Mathura,Mau,Meerut,Mirzapur,Moradabad,Muzaffarnagar,Pilibhit,Pratapgarh,Rae Bareli,Rampur,Saharanpur,Sant Kabir Nagar,Sant Ravidas Nagar,Sambhal,Shahjahanpur,Shamli,Shravasti,Siddharthnagar,Sitapur,Sonbhadra,Sultanpur,Unnao,Varanasi (Kashi),Allahabad,Amethi,Bagpat'
-  
   // let dists = dist.split(',')
   // let distsObj = {}
   // for(let d of dists){

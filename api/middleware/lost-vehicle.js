@@ -13,5 +13,21 @@ module.exports = {
     } catch (exc) {
       throw exc;
     }
+  },
+  getVehicleByNo: async function(regNo) {
+    try {
+      console.log(regNo);
+      let vehicle = await (
+        await db.ref(`Veicle Lost/${regNo}`).once("value")
+      ).val();
+      // console.log(vehicle);
+      if (vehicle) {
+        return vehicle;
+      } else {
+        throw "Vehicle not found";
+      }
+    } catch (exc) {
+      throw exc;
+    }
   }
 };

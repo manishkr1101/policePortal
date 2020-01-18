@@ -8,7 +8,7 @@ router.get("/", (req, res) => {
   lostVehicles
     .getAllLostVehicles()
     .then(lostVehicles => {
-      console.log(lostVehicles);
+      // console.log(lostVehicles);
       res.render("records/lost-vehicle", {
         title: "Lost vehicle",
         user: getUser(req),
@@ -20,12 +20,21 @@ router.get("/", (req, res) => {
   // res.send("hi");
 });
 
-router.get("/:vehicleNo", (req, res) => {
-  res.render("records/vehicleDetails", {
-    title: "Vehicle-details",
-    user: getUser(req),
-    css: "vehicleDetails"
-  });
+router.get("/:vehicleDetails", async (req, res) => {
+  try {
+    const vehicle = await lostVehicles.getVehicleByNo(
+      Number(req.params.vehicleDetails)
+    );
+    console.log("vehicle");
+    res.render("records/vehicleDetails", {
+      title: "Vehicle-details",
+      user: getUser(req),
+      css: "vehicleDetails",
+      vehicle: vehicle
+    });
+  } catch (error) {
+    res.send(error);
+  }
 });
 
 function getUser(req) {

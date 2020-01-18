@@ -5,9 +5,9 @@ const checkAuth = require("../../middleware/checkAuth");
 const firs = require("../../middleware/fir");
 const date = require("../../middleware/date");
 const storage = require("../../middleware/storage");
-const db = require('../../middleware/db')
+const db = require("../../middleware/db");
 
-router.use(checkAuth)
+router.use(checkAuth);
 
 router.get("/", (req, res) => {
   firs
@@ -30,6 +30,7 @@ router.get("/:firNumber", async (req, res) => {
     fir.date = date.getDateAndTime(fir.date);
     fir.complainant["dob"] = date.getDate(fir.complainant["dob"]);
     fir.signature.url = await storage.getSignedUrl(fir.signature.url);
+    console.log(fir.signature.url);
     res.render("records/fir-number", {
       title: "fir-content",
       user: getUser(req),
@@ -41,27 +42,26 @@ router.get("/:firNumber", async (req, res) => {
   }
 });
 
-router.get('/:firNumber/accept', async (req, res) => {
+router.get("/:firNumber/accept", async (req, res) => {
   try {
-    const firNo = req.params.firNumber
-    await firs.acceptFir(firNo)
-    
-    res.redirect('/fir')
+    const firNo = req.params.firNumber;
+    await firs.acceptFir(firNo);
+    res.redirect("/fir");
   } catch (error) {
-    res.send({err: error})
+    res.send({ err: error });
   }
-})
+});
 
-router.post('/:firNumber/reject',async (req, res) => {
+router.post("/:firNumber/reject", async (req, res) => {
   try {
-    const firNo = req.params.firNumber
-    const rejectMsg = req.body.reason
-    await firs.rejectFir(firNo, rejectMsg)
-    res.redirect('/fir')
+    const firNo = req.params.firNumber;
+    const rejectMsg = req.body.reason;
+    await firs.rejectFir(firNo, rejectMsg);
+    res.redirect("/fir");
   } catch (error) {
-    res.send({err: error})
+    res.send({ err: error });
   }
-})
+});
 
 function getUser(req) {
   return {

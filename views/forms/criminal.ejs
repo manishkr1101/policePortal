@@ -1,168 +1,176 @@
 <%- include('partials/header.ejs') %>
 
 <div class="container">
-    <h1>Criminal Details</h1>
-    <div class="row">
-        <form action="/form/criminal" method="POST" enctype="multipart/form-data">
-            <fieldset>
-                <legend>
-                    <h2>Personal Details</h2>
-                </legend>
-                <div class="row">
-                    <div class="col s6">
-                        <div class="input-field">
-                            <i class="material-icons prefix">person</i>
-                            <input id="name" type="text" name="name" />
-                            <label for="name">Name</label>
-                        </div>
-
-
-
-                        <div class="input-field">
-                            <i class="material-icons prefix">date_range</i>
-                            <input id="dob" type="text" class="datepicker" name="dob">
-                            <label for="dob">Date Of Birth</label>
-                        </div>
-                    </div>
-                    <div class="col s6">
-                        <div class="input-field">
-                            <i class="material-icons prefix">wc</i>
-                            <select name="sex">
-                                <option value="" disabled selected>Choose your option</option>
-                                <option value="male">Male</option>
-                                <option value="female">Female</option>
-                                <option value="other">Other</option>
-                            </select>
-                            <label>Sex</label>
-                        </div>
-
-                        <div class="input-field">
-                            <i class="material-icons prefix">phone</i>
-                            <input id="mobile" type="tel" name="phone" />
-                            <label for="mobile">Phone Number</label>
-                        </div>
-
-
-                    </div>
-                </div>
-            </fieldset>
-
-            <fieldset>
-                <legend>
-                    <h2>Address Details</h2>
-                </legend>
-                <div class="row">
-                    <div class="col s6">
-                        <div class="input-field">
-                            <i class="material-icons prefix">location_city</i>
-                            <input id="Village/Town/City1" type="text" name="city" />
-                            <label for="Village/Town/City1">Village/Town/City</label>
-                        </div>
-
-                        <div class="input-field">
-                            <i class="material-icons prefix">business</i>
-                            <select name="district">
-                                <option value="" disabled selected>Choose your District</option>
-                            </select>
-                            <label>District</label>
-                        </div>
-                    </div>
-                    <div class="col s6">
-                        <div class="input-field">
-                            <i class="material-icons prefix">home_work</i>
-                            <select name="state">
-                                <option value="" disabled selected>Choose your State</option>
-                                <option value="Andhra">Andhra</option>
-                                <option value="Bihar">Bihar</option>
-                                <option value="other">Other</option>
-                            </select>
-                            <label>State</label>
-                        </div>
-
-
-                    </div>
-                </div>
-
-            </fieldset>
-
-
-            <fieldset>
-                <legend>
-                    <h2>Crime Details</h2>
-                </legend>
-                <div class="row">
-                    <div class="col s6">
-                        <div class="input-field">
-                            <select name="type">
-                                <option value="" disabled selected>Choose your option</option>
-                                <option value="Theft/Robbery">Theft/Robbery</option>
-                                <option value="Murder/Attempt to Murder">Murder/Attempt to Murder</option>
-                                <option value="Narcotics/Drugs">Narcotics/Drugs</option>
-                                <option value="Physical/Sexual Abuse">Physical/Sexual Abuse</option>
-                                <option value="Financial Fraud">Financial Fraud</option>
-                                <option value="Child Abuse/POCSO">Child Abuse/POCSO</option>
-                            </select>
-                            <label>Crime Category</label>
-                        </div>
-
-                        <div class="input-field">
-                            <textarea id="textarea1" class="materialize-textarea" name="desc"></textarea>
-                            <label for="textarea1">Description</label>
-                        </div>
-
-                    </div>
-                    <div class="col s6">
-                        <div class="input-field">
-                            <select name="sub-type">
-                                <option value="" disabled selected>Choose your option</option>
-                                <option value="Other">Other</option>
-                                <option value="NA">NA</option>
-                                <option value="Theft">Theft</option>
-                            </select>
-                            <label>Crime sub type</label>
-                        </div>
-
-                    </div>
-                </div>
-            </fieldset>
-            <legend>
-                <h2>Upload Pictures of Criminal</h2>
-            </legend>
-            <fieldset>
-                <div class="row">
-                    <div class="col s6">
-                        <div class="file-field input-field">
-                            <div class="btn">
-                                <span>File</span>
-                                <input type="file" required name="images" multiple accept="image/*" />
-                            </div>
-                            <div class="file-path-wrapper">
-                                <input class="file-path validate" type="text" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </fieldset>
-            <div class="save">
-                <button class="btn waves-effect waves-light" type="submit" style="display: block;">
-                    Submit
-                    <i class="material-icons right">send</i>
-                </button>
+  <h1>Criminal Details</h1>
+  <div class="row">
+    <form action="/form/criminal" method="POST" enctype="multipart/form-data">
+      <fieldset>
+        <legend>
+          <h2>Personal Details</h2>
+        </legend>
+        <div class="row">
+          <div class="col s6">
+            <div class="input-field">
+              <i class="material-icons prefix">person</i>
+              <input id="name" type="text" name="name" />
+              <label for="name">Name</label>
             </div>
-        </form>
-    </div>
+            <div class="input-field">
+              <i class="material-icons prefix">person</i>
+              <input id="fname" type="text" name="fathername" />
+              <label for="fname">Father's Name</label>
+            </div>
+            <div class="input-field">
+              <i class="material-icons prefix">date_range</i>
+              <input id="dob" type="text" class="datepicker" name="dob" />
+              <label for="dob">Date Of Birth</label>
+            </div>
+          </div>
+          <div class="col s6">
+            <div class="input-field">
+              <i class="material-icons prefix">wc</i>
+              <select name="sex">
+                <option value="" disabled selected>Choose your option</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+              </select>
+              <label>Sex</label>
+            </div>
 
+            <div class="input-field">
+              <i class="material-icons prefix">phone</i>
+              <input id="mobile" type="tel" name="phone" />
+              <label for="mobile">Phone Number</label>
+            </div>
+          </div>
+        </div>
+      </fieldset>
 
+      <fieldset>
+        <legend>
+          <h2>Address Details</h2>
+        </legend>
+        <div class="row">
+          <div class="col s6">
+            <div class="input-field">
+              <i class="material-icons prefix">location_city</i>
+              <input id="Village/Town/City1" type="text" name="city" />
+              <label for="Village/Town/City1">Village/Town/City</label>
+            </div>
 
+            <div class="input-field">
+              <i class="material-icons prefix">business</i>
+              <select name="district">
+                <option value="" disabled selected>Choose your District</option>
+              </select>
+              <label>District</label>
+            </div>
+          </div>
+          <div class="col s6">
+            <div class="input-field">
+              <i class="material-icons prefix">home_work</i>
+              <select name="state">
+                <option value="" disabled selected>Choose your State</option>
+                <option value="Andhra">Andhra</option>
+                <option value="Bihar">Bihar</option>
+                <option value="other">Other</option>
+              </select>
+              <label>State</label>
+            </div>
+          </div>
+        </div>
+      </fieldset>
 
+      <fieldset>
+        <legend>
+          <h2>Crime Details</h2>
+        </legend>
+        <div class="row">
+          <div class="col s6">
+            <div class="input-field">
+              <select name="type">
+                <option value="" disabled selected>Choose your option</option>
+                <option value="Theft/Robbery">Theft/Robbery</option>
+                <option value="Murder/Attempt to Murder"
+                  >Murder/Attempt to Murder</option
+                >
+                <option value="Narcotics/Drugs">Narcotics/Drugs</option>
+                <option value="Physical/Sexual Abuse"
+                  >Physical/Sexual Abuse</option
+                >
+                <option value="Financial Fraud">Financial Fraud</option>
+                <option value="Child Abuse/POCSO">Child Abuse/POCSO</option>
+              </select>
+              <label>Crime Category</label>
+            </div>
+
+            <div class="input-field">
+              <textarea
+                id="textarea1"
+                class="materialize-textarea"
+                name="desc"
+              ></textarea>
+              <label for="textarea1">Description</label>
+            </div>
+          </div>
+          <div class="col s6">
+            <div class="input-field">
+              <select name="sub-type">
+                <option value="" disabled selected>Choose your option</option>
+                <option value="Other">Other</option>
+                <option value="NA">NA</option>
+                <option value="Theft">Theft</option>
+              </select>
+              <label>Crime sub type</label>
+            </div>
+            <div class="input-field">
+              <i class="material-icons prefix">attach_money</i>
+              <input id="reward" type="text" name="reward" />
+              <label for="reward">Rewards</label>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+      <legend>
+        <h2>Upload Pictures of Criminal</h2>
+      </legend>
+      <fieldset>
+        <div class="row">
+          <div class="col s6">
+            <div class="file-field input-field">
+              <div class="btn">
+                <span>File</span>
+                <input
+                  type="file"
+                  required
+                  name="images"
+                  multiple
+                  accept="image/*"
+                />
+              </div>
+              <div class="file-path-wrapper">
+                <input class="file-path validate" type="text" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+      <div class="save">
+        <button
+          class="btn waves-effect waves-light"
+          type="submit"
+          style="display: block;"
+        >
+          Submit
+          <i class="material-icons right">send</i>
+        </button>
+      </div>
+    </form>
+  </div>
 </div>
 
-<style>
-
-</style>
-
-
-
+<style></style>
 
 <%- include('partials/footer') %>
 <script src="/js/forms/criminal.js"></script>
