@@ -45,16 +45,18 @@ router.get('/:firNumber/accept', async (req, res) => {
   try {
     const firNo = req.params.firNumber
     await firs.acceptFir(firNo)
+    
     res.redirect('/fir')
   } catch (error) {
     res.send({err: error})
   }
 })
 
-router.get('/:firNumber/reject',async (req, res) => {
+router.post('/:firNumber/reject',async (req, res) => {
   try {
     const firNo = req.params.firNumber
-    await firs.rejectFir(firNo)
+    const rejectMsg = req.body.reason
+    await firs.rejectFir(firNo, rejectMsg)
     res.redirect('/fir')
   } catch (error) {
     res.send({err: error})

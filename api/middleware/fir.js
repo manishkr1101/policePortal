@@ -1,4 +1,5 @@
 const db = require("./db");
+const mailer = require('./mailer')
 
 module.exports = {
   getAllFirByPS: async function(psid) {
@@ -26,6 +27,11 @@ module.exports = {
       if(fir.status == 'pending'){
         fir.status = 'accepted'
         fir.accepted = 1
+        mailer.sendMail(
+          fir.complainant.email,
+          'Acceptance of FIR',
+          `Your FIR ${fir['fir-no']} has been accepted. Kindly Check in your app.\n\nRegards, NCRA.`
+        )
         await this.updateFir(firNo, fir)
       }
     } catch (error) {
@@ -35,12 +41,18 @@ module.exports = {
   updateFir: async function(firNo, fir){
     await db.ref(`fir/${firNo}`).update(fir)
   },
-  rejectFir: async function(firNo){
+  rejectFir: async function(firNo, rejectMsg){
     try {
       let fir = await this.getFirById(firNo)
       if(fir.status == 'pending'){
         fir.status = 'rejected'
         fir.accepted = 0
+        fir.rejctMsg = rejectMsg
+        mailer.sendMail(
+          fir.complainant.email, 
+          'Rejection Of you Fir', 
+          `Your Fir ${fir['fir-no']} has been rejected. Kindly Check in your app.\n\nRegards, NCRA.`
+        )
         await this.updateFir(firNo, fir)
       }
     } catch (error) {

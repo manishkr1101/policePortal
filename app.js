@@ -13,6 +13,10 @@ const checkAuth = require("./api/middleware/checkAuth");
 const session = require("express-session");
 
 app.use(express.static("public"));
+app.use(function(req, res, next){
+  process.stdout.write('ip '+req.ip)
+  next();
+})
 app.use(morgan("dev"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -89,6 +93,7 @@ app.use('/sendotp', otpRoutes)
 
 app.get("/", checkAuth, (req, res) => {
   console.log(req.user);
+  console.log(req.ip)
   
   const options = {
     title: "Home",
@@ -129,16 +134,16 @@ app.get("/data", (req, res) => {
   //   stateObj[s] = 0
   // }
   // let dist = 'Araria,Madhepura,Arwal,Madhubani,Aurangabad,Monghyr,Banka,Muzaffarpur,Begusarai,Nalanda,Bhagalpur,Nawada,Bhojpur,Patna,Buxar,Purnea,Darbhanga,Rohtas,East Champaran,Saharsa,Gaya,Samastipur,Gopalganj,Saran,Jamui,Shiekhpura,Jehanabad,Sheohar,Kaimur,Sitamarhi,Katihar,Siwan,Khagaria,Supaul,Kishanganj,Vaishali,Lakhisarai,West Champaran';
-  let dist = 'Agra,Aligarh,PrayagRaj,Ambedkar Nagar,Amroha,Auraiya,Azamgarh,Badaun,Bahraich,Ballia,Balrampur,Banda District,Barabanki,Bareilly,Basti,Bijnor,Bulandshahr,Chandauli(Varanasi Dehat),Chitrakoot,Deoria,Etah,Etawah,Faizabad,Farrukhabad,Fatehpur,Firozabad,Gautam Buddha Nagar,Ghaziabad,Ghazipur,Gonda,Gorakhpur,Hamirpur,Hapur District,Hardoi,Hathras,Jaunpur District,Jhansi,Kannauj,Kanpur Dehat,Kanpur Nagar,Kasganj,Kaushambi,Kushinagar,Lakhimpur Kheri,Lalitpur,Lucknow,Maharajganj,Mahoba,Mainpuri,Mathura,Mau,Meerut,Mirzapur,Moradabad,Muzaffarnagar,Pilibhit,Pratapgarh,Rae Bareli,Rampur,Saharanpur,Sant Kabir Nagar,Sant Ravidas Nagar,Sambhal,Shahjahanpur,Shamli,Shravasti,Siddharthnagar,Sitapur,Sonbhadra,Sultanpur,Unnao,Varanasi (Kashi),Allahabad,Amethi,Bagpat'
+  // let dist = 'Agra,Aligarh,PrayagRaj,Ambedkar Nagar,Amroha,Auraiya,Azamgarh,Badaun,Bahraich,Ballia,Balrampur,Banda District,Barabanki,Bareilly,Basti,Bijnor,Bulandshahr,Chandauli(Varanasi Dehat),Chitrakoot,Deoria,Etah,Etawah,Faizabad,Farrukhabad,Fatehpur,Firozabad,Gautam Buddha Nagar,Ghaziabad,Ghazipur,Gonda,Gorakhpur,Hamirpur,Hapur District,Hardoi,Hathras,Jaunpur District,Jhansi,Kannauj,Kanpur Dehat,Kanpur Nagar,Kasganj,Kaushambi,Kushinagar,Lakhimpur Kheri,Lalitpur,Lucknow,Maharajganj,Mahoba,Mainpuri,Mathura,Mau,Meerut,Mirzapur,Moradabad,Muzaffarnagar,Pilibhit,Pratapgarh,Rae Bareli,Rampur,Saharanpur,Sant Kabir Nagar,Sant Ravidas Nagar,Sambhal,Shahjahanpur,Shamli,Shravasti,Siddharthnagar,Sitapur,Sonbhadra,Sultanpur,Unnao,Varanasi (Kashi),Allahabad,Amethi,Bagpat'
   
-  let dists = dist.split(',')
-  let distsObj = {}
-  for(let d of dists){
-    distsObj[d] = 0
-  }
-  db.ref('/places/states').update({
-    'Uttar Pradesh': distsObj
-  })
+  // let dists = dist.split(',')
+  // let distsObj = {}
+  // for(let d of dists){
+  //   distsObj[d] = 0
+  // }
+  // db.ref('/places/states').update({
+  //   'Uttar Pradesh': distsObj
+  // })
 });
 
 app.listen(process.env.PORT || 3000, () => {

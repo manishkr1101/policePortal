@@ -161,7 +161,7 @@ router.post("/criminal", (req, res) => {
         
         person.images[key] = imgInfo;
       }
-      await face.train();
+      face.train();
       await db.ref(`/criminals/${person.personId}`).set(person);
       res.send("Person Added Successfully");
     } catch (error) {
