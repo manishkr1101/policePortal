@@ -14,14 +14,14 @@
           <div class="col s6">
             <div class="input-field">
               <i class="material-icons prefix">date_range</i>
-              <input id="fromdate" type="text" class="datepicker">
+              <input id="fromdate" type="text" class="datepicker" name="fromdate">
               <label for="fromdate">From Date</label>
             </div>
           </div>
           <div class="col s6">
             <div class="input-field">
               <i class="material-icons prefix">date_range</i>
-              <input id="todate" type="text" class="datepicker">
+              <input id="todate" type="text" class="datepicker" name="todate">
               <label for="todate">To Date</label>
             </div>
           </div>
@@ -37,12 +37,12 @@
           <div class="col s6">
             <div class="input-field">
               <i class="material-icons prefix">person</i>
-              <input id="name" type="text" />
+              <input id="name" type="text" name="name"/>
               <label for="name">Name</label>
             </div>
             <div class="input-field">
               <i class="material-icons prefix">accessibility</i>
-              <select>
+              <select name="bodybuild">
                 <option value="" disabled selected>Choose your option</option>
                 <option value="Fat">Fat</option>
                 <option value="Very Fat">Very Fat</option>
@@ -56,19 +56,19 @@
             </div>
             <div class="input-field">
               <i class="material-icons prefix">height</i>
-              <input id="height1" type="text" />
+              <input id="height1" type="text" name="height1">
               <label for="height1">Height Range-From</label>
             </div>
             <div class="input-field">
               <i class="material-icons prefix">accessibility_new</i>
-              <input id="age1" type="text" />
+              <input id="age1" type="text" name="age1"/>
               <label for="age1">Age Range-From</label>
             </div>
           </div>
           <div class="col s6">
             <div class="input-field">
               <i class="material-icons prefix">wc</i>
-              <select>
+              <select name="sex">
                 <option value="" disabled selected>Choose your option</option>
                 <option value="male">Male</option>
                 <option value="female">Female</option>
@@ -78,7 +78,7 @@
             </div>
             <div class="input-field">
               <i class="material-icons prefix">face</i>
-              <select>
+              <select name="bodycomplexion">
                 <option value="" disabled selected>Choose your option</option>
                 <option value="Fair">Fair</option>
                 <option value="Very Fair">Very Fair</option>
@@ -94,12 +94,12 @@
             </div>
             <div class="input-field">
               <i class="material-icons prefix">height</i>
-              <input id="height2" type="text" />
+              <input id="height2" type="text" name="height2" />
               <label for="height2">Height Range-To</label>
             </div>
             <div class="input-field">
               <i class="material-icons prefix">accessibility_new</i>
-              <input id="age2" type="text" />
+              <input id="age2" type="text" name="age2"/>
               <label for="age2">Age Range-To</label>
             </div>
           </div>
@@ -113,7 +113,7 @@
           <div class="col s6">
             <div class="input-field">
               <i class="material-icons prefix">face</i>
-              <select>
+              <select name="facetype">
                 <option value="" disabled selected>Choose your option</option>
                 <option value="Long (Oval)">Long (Oval)</option>
                 <option value="Round">Round</option>
@@ -128,7 +128,7 @@
               <label>Face Type</label>
             </div>
             <div class="input-field">
-              <select>
+              <select name="beard">
                 <option value="" disabled selected>Choose your option</option>
                 <option value="Bearded">Bearded</option>
                 <option value="Clean Shaven">Clean Shaven</option>
@@ -145,7 +145,7 @@
           </div>
           <div class="col s6">
             <div class="input-field">
-              <select>
+              <select name="nose">
                 <option value="" disabled selected>Choose your option</option>
                 <option value="Normal">Normal</option>
                 <option value="Long">Long</option>
@@ -160,7 +160,7 @@
               <label>Nose</label>
             </div>
             <div class="input-field">
-              <select>
+              <select name="moustache">
                 <option value="" disabled selected>Choose your option</option>
                 <option value="Clipped">Clipped</option>
                 <option value="Drooping">Drooping</option>
@@ -184,7 +184,7 @@
           <div class="col s6">
             <div class="input-field">
               <i class="material-icons prefix">visibility</i>
-              <select>
+              <select name="eyetype">
                 <option value="" disabled selected>Choose your option</option>
                 <option value="Normal">Normal</option>
                 <option value="Sunken">Sunken </option>
@@ -200,7 +200,7 @@
               <label>Eyes Type</label>
             </div>
             <div class="input-field">
-              <select>
+              <select name="usespecs">
                 <option value="" disabled selected>Choose your option</option>
                 <option value="Yes">Yes</option>
                 <option value="No">No</option>
@@ -210,7 +210,7 @@
           </div>
           <div class="col s6">
             <div class="input-field">
-              <select>
+              <select name="blind">
                 <option value="" disabled selected>Choose your option</option>
                 <option value="NO">NO</option>
                 <option value="Blind in one Eye">Blind in one Eye </option>
@@ -232,12 +232,12 @@
           <div class="col s6">
             <div class="input-field">
               <i class="material-icons prefix">sentiment_satisfied_alt</i>
-              <select>
+              <select name="hairtype">
                 <option value="" disabled selected>Choose your option</option>
                 <option value="Normal">Normal</option>
-                <option value="Full bald">Full bald</option
-                ><option value="Central bald">Central bald </option
-                ><option value="Front bald">Front bald</option>
+                <option value="Full bald">Full bald</option>
+                <option value="Central bald">Central bald </option>
+                <option value="Front bald">Front bald</option>
                 <option value="Curly Black">Curly Black</option>
                 <option value="Curly Black & Grey">Curly Black & Grey</option>
                 <option value="Curly Grey">Curly Grey</option>
@@ -246,7 +246,7 @@
               <label>Hair Type</label>
             </div>
             <div class="input-field">
-              <select>
+              <select name="hairlength">
                 <option value="" disabled selected>Choose your option</option>
                 <option value="Lengthy">Lengthy</option>
                 <option value="Short">Short</option>
@@ -257,7 +257,7 @@
           </div>
           <div class="col s6">
             <div class="input-field">
-              <select>
+              <select name="haircolor">
                 <option value="" disabled selected>Choose your option</option>
                 <option value="Black">Black</option>
                 <option value="Brown">Brown </option>
@@ -281,12 +281,12 @@
           <div class="col s6">
             <div class="input-field">
               <i class="material-icons prefix">record_voice_over</i>
-              <select>
+              <select name="habits">
                 <option value="" disabled selected>Choose your option</option>
                 <option value="Bragging">Bragging</option>
-                <option value="Chews Tobacco">Chews Tobacco</option
-                ><option value="Drinks Liquor">Drinks Liquor </option
-                ><option value="Drug Addict">Drug Addict</option>
+                <option value="Chews Tobacco">Chews Tobacco</option>
+               <option value="Drinks Liquor">Drinks Liquor </option>
+                <option value="Drug Addict">Drug Addict</option>
                 <option value="Eyes Blinking">Eyes Blinking</option>
                 <option value="Eyes Shifting">Eyes Shifting</option>
                 <option value="Gambler">Gambler</option>
@@ -299,7 +299,7 @@
           </div>
           <div class="col s6">
             <div class="input-field">
-              <select>
+              <select name="speech">
                 <option value="" disabled selected>Choose your option</option>
                 <option value="Normal">Normal</option>
                 <option value="Fast">Fast</option>

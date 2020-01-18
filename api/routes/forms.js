@@ -182,9 +182,29 @@ router.get("/missing-person", (req, res) => {
   });
 });
 
+router.post("/missing-person", (req, res) => {
+  let form = new formidabel.IncomingForm();
+  let missingPerson;
+  form.parse(req, (err, fields) => {
+    missingPerson = {};
+  });
+});
+
 router.get("/lost-vehicle", (req, res) => {
   res.render("forms/lost-vehicle", {
     title: "Report Lost Vehicle"
+  });
+});
+
+router.post("/lost-vehicle", (req, res) => {
+  let form = new formidabel.IncomingForm();
+  let lostVehicle;
+  form.parse(req, (err, fields, files) => {
+    lostVehicle = {
+      regno: fields.regno || 0,
+      engno: fields.engno || 0,
+      chassisno: fields.chassisno || 0
+    };
   });
 });
 

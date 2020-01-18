@@ -94,7 +94,6 @@ app.use("/sendotp", otpRoutes);
 app.get("/", checkAuth, (req, res) => {
   console.log(req.user);
   console.log(req.ip);
-
   const options = {
     title: "Home",
     css: "styles",
