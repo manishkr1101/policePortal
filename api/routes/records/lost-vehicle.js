@@ -2,13 +2,22 @@ const express = require("express");
 const router = express.Router();
 const passport = require("passport");
 const checkAuth = require("../../middleware/checkAuth");
+const lostVehicles = require("../../middleware/lost-vehicle");
 
 router.get("/", (req, res) => {
-  res.render("records/lost-vehicle", {
-    title: "Lost vehicle",
-    user: getUser(req),
-    css: "lost-vehicle"
-  });
+  lostVehicles
+    .getAllLostVehicles()
+    .then(lostVehicles => {
+      console.log(lostVehicles);
+      res.render("records/lost-vehicle", {
+        title: "Lost vehicle",
+        user: getUser(req),
+        css: "lost-vehicle",
+        lostVehicles: lostVehicles
+      });
+    })
+    .catch(err => res.send(err));
+  // res.send("hi");
 });
 
 router.get("/:vehicleNo", (req, res) => {

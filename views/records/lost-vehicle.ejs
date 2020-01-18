@@ -37,7 +37,7 @@
         <thead>
           <tr>
             <th>S.No.</th>
-            <th>Regisratoin no.</th>
+            <th>Registration no.</th>
             <th>Engine no.</th>
             <th>Chassis no.</th>
             <th>View</th>
@@ -45,13 +45,15 @@
         </thead>
 
         <tbody>
+          <% for(let vehicle of lostVehicles){%>
           <tr>
             <td></td>
-            <td>Regisratoin no.</td>
-            <td>Engine no.</td>
-            <td>Chassis no.</td>
+            <td><%= vehicle['vehicle_regno']%></td>
+            <td><%= vehicle['vehicle_engineno']%></td>
+            <td><%= vehicle['vehicle_chasisno']%></td>
             <td></td>
           </tr>
+          <%}%>
         </tbody>
       </table>
     </div>

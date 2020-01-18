@@ -149,6 +149,7 @@ router.post("/criminal", (req, res) => {
         console.log("file", file);
         let persistedFaceId = await face.addFace(personId, file.path);
         console.log(persistedFaceId);
+        key = await getKey();
         person.persistedFaceId[persistedFaceId] = key;
 
         let imgInfo = await storage.uploadFile(
@@ -157,7 +158,7 @@ router.post("/criminal", (req, res) => {
           file.type
         );
         console.log(imgInfo);
-        key = await getKey();
+        
         person.images[key] = imgInfo;
       }
       await face.train();

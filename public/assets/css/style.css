@@ -100,6 +100,7 @@ h4 small {
 }
 section {
   padding: 120px 0 40px 0;
+  text-align: center;
 }
 
 iframe,
@@ -186,7 +187,7 @@ blockquote {
   text-align: center;
   text-shadow: 0 1px 0 #ffffff;
   border-bottom: 3px double #333;
-  width: auto;
+  /* width: auto; */
   display: inline;
 }
 
@@ -194,7 +195,7 @@ section.dark .heading h3 {
   color: #fff;
   text-shadow: 0 1px 0 #3a3a3a;
   border-bottom: 3px double #eee;
-  width: auto;
+  /* width: auto; */
   display: inline;
 }
 

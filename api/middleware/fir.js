@@ -19,5 +19,32 @@ module.exports = {
     } catch (exc) {
       throw exc;
     }
+  },
+  acceptFir: async function(firNo){
+    try {
+      let fir = await this.getFirById(firNo)
+      if(fir.status == 'pending'){
+        fir.status = 'accepted'
+        fir.accepted = 1
+        await this.updateFir(firNo, fir)
+      }
+    } catch (error) {
+      throw error
+    }
+  },
+  updateFir: async function(firNo, fir){
+    await db.ref(`fir/${firNo}`).update(fir)
+  },
+  rejectFir: async function(firNo){
+    try {
+      let fir = await this.getFirById(firNo)
+      if(fir.status == 'pending'){
+        fir.status = 'rejected'
+        fir.accepted = 0
+        await this.updateFir(firNo, fir)
+      }
+    } catch (error) {
+      throw error
+    }
   }
 };

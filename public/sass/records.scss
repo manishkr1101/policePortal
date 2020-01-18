@@ -10,6 +10,10 @@ h1{
     text-align: center;
 }
 
-.active{
-    background: #cfcfdc;
+.sidenav.dark{
+    background: rgb(24, 23, 23);
+
+    li > a{
+        color: white;
+    }
 }

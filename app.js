@@ -92,7 +92,8 @@ app.get("/", checkAuth, (req, res) => {
   
   const options = {
     title: "Home",
-    css: "styles"
+    css: "styles",
+    ps: req.user
   };
   res.render("index", options);
 });

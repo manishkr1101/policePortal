@@ -7,5 +7,7 @@ section {
 h1 {
   text-align: center; }
 
-.active {
-  background: #cfcfdc; }
+.sidenav.dark {
+  background: #181717; }
+  .sidenav.dark li > a {
+    color: white; }
