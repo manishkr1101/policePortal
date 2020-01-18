@@ -6,6 +6,7 @@ const firs = require("../../middleware/fir");
 const date = require("../../middleware/date");
 const storage = require("../../middleware/storage");
 const db = require("../../middleware/db");
+const acrypt = require('../../middleware/acrypt')
 
 router.use(checkAuth);
 
@@ -26,11 +27,11 @@ router.get("/", (req, res) => {
 router.get("/:firNumber", async (req, res) => {
   try {
     const fir = await firs.getFirById(req.params.firNumber);
-    console.log(fir);
+    // console.log(fir);
     fir.date = date.getDateAndTime(fir.date);
     fir.complainant["dob"] = date.getDate(fir.complainant["dob"]);
     fir.signature.url = await storage.getSignedUrl(fir.signature.url);
-    console.log(fir.signature.url);
+    fir.content = (await acrypt.decrypt(fir['fir-no'], fir.content)).decryptedData
     res.render("records/fir-number", {
       title: "fir-content",
       user: getUser(req),

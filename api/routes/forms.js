@@ -8,6 +8,7 @@ const formidabel = require("formidable");
 const storage = require("../middleware/storage");
 const db = require("../middleware/db");
 const face = require("../middleware/face");
+const acrypt = require('../middleware/acrypt')
 
 let otps = {};
 
@@ -20,7 +21,7 @@ router.get("/fir", checkAuth, (req, res) => {
 router.post("/fir", checkAuth, (req, res) => {
   const form = new formidabel.IncomingForm();
   let fir;
-  form.parse(req, (err, fields, files) => {
+  form.parse(req,async (err, fields, files) => {
     let otp = fields.otp;
     const date = new Date().getTime();
 
@@ -43,12 +44,14 @@ router.post("/fir", checkAuth, (req, res) => {
         "crime-sub-type": fields.crimeSubType || 0,
         "is-victim-present": Number(fields.typeOfVictim) || 0,
         "is-crime-scene": Number(fields.occurencePlaceKnown) || 0,
-        content: fields.content || 0,
         date: date,
         "fir-no": date,
         status: "pending",
         accepted: 0
       };
+
+      const msg = await acrypt.encrypt(fir['fir-no'], fields.content)
+      fir.content = msg.encryptedData;
 
       if (fields.isSameAddr == "on") {
         fir.complainant["perm-address"] = fir.complainant.address;
