@@ -159,19 +159,22 @@
             <a href="/complaint" class="btn btn-theme">View</a>
           </div>
         </div>
-        <div class="span3">
-          <div class="box aligncenter">
-            <div class="halftop">
-              <h4><strong>Fund Allocation</strong></h4>
-              <img src="images/verify.png" width="55px" height="55px" />
-              <!-- <i class="icon-mobile-phone icon-4x"></i>-->
+        <% if(typeof ps.admin != 'undefined' && ps.admin == 1){ %>
+          <div class="span3">
+            <div class="box aligncenter">
+              <div class="halftop">
+                <h4><strong>Fund Allocation</strong></h4>
+                <img src="images/verify.png" width="55px" height="55px" />
+                <!-- <i class="icon-mobile-phone icon-4x"></i>-->
+              </div>
+              <p>
+                Verify requests for Funds and allocate accordingly
+              </p>
+              <a href="/fundAllocation" class="btn btn-theme">View</a>
             </div>
-            <p>
-              Verify requests for Funds and allocate accordingly
-            </p>
-            <a href="/fundAllocation" class="btn btn-theme">View</a>
           </div>
-        </div>
+        <% } %>
+        
       </div>
     </div>
   </section>
@@ -198,9 +201,12 @@
           <li class="active"><a href="form/fir" class="btn btn-theme">Report FIR</a></li><br>
           <li class="web"><a href="form/complaint" class="btn btn-theme">Report Complain</a></li><br>
           <li class="brand"><a href="form/missing-person" class="btn btn-theme">Report Missing Person</a></li><br>
-          <li class="graphic"><a href="form/lost-vehicle" class="btn btn-theme">Report Lost Vehicle</a></li><br> 
-          <li class="web"><a href="form/requestforFund" class="btn btn-theme">Request for Fund</a></li><br>
-          <li class="web"><a href="form/uploadBills" class="btn btn-theme">Upload Bills</a></li>
+          <li class="graphic"><a href="form/lost-vehicle" class="btn btn-theme">Report Lost Vehicle</a></li><br>
+          <% if(typeof ps.admin == 'undefined' || ps.admin == 0){ %>
+            <li class="web"><a href="form/requestforFund" class="btn btn-theme">Request for Fund</a></li><br>
+            <li class="web"><a href="form/uploadBills" class="btn btn-theme">Upload Bills</a></li>
+          <% } %> 
+          
         </ul>
         <div class="clear">
         </div>
@@ -208,6 +214,7 @@
     </div>
     </div>
   </section>
+  <% if(ps.admin == 0){ %>
   <!-- <section id="about"> -->
   <section id="about" class="section">
     <div class="container">
@@ -305,6 +312,8 @@
       </div>
     </div>
   </section>
+
+  <%}%>
   <!-- end section about -->
   <!-- section works -->
   <!-- section contact -->

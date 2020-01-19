@@ -102,6 +102,9 @@ app.get("/", checkAuth, async (req, res) => {
 });
 
 async function getPolices(psid){
+  if(typeof psid == 'undefined' || psid == null){
+    return {}
+  }
   const obj = (await db.ref('police-station/'+psid).once('value')).val()
   let newObj = {
     sp: obj.sp,
@@ -112,7 +115,7 @@ async function getPolices(psid){
   let result = {}
   for(let i in newObj){
      let temp = await (await db.ref(`police/${newObj[i]}`).once('value')).val()
-     console.log(temp)
+    //  console.log(temp)
      result[i] = {}
      result[i]['name'] = temp.name
      result[i]['url'] = await storage.getSignedUrl(temp.image.url)

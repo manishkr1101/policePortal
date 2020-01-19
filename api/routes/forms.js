@@ -10,7 +10,7 @@ const db = require("../middleware/db");
 const face = require("../middleware/face");
 const acrypt = require("../middleware/acrypt");
 
-let otps = {};
+router.use(checkAuth)
 
 router.get("/fir", checkAuth, (req, res) => {
   res.render("forms/fir", {
@@ -219,14 +219,35 @@ router.get("/complaint", (req, res) => {
 
 router.get("/requestforFund", (req, res) => {
   res.render("forms/requestforFund", {
-    title: "Request for Fund"
+    title: "Request for Fund",
+    ps: req.user
   });
 });
 
+router.post("/requestforFund", (req, res) => {
+  res.render("forms/requestforFund", {
+    title: "Request for Fund",
+    ps: req.user
+  });
+});
+
+
 router.get("/uploadBills", (req, res) => {
   res.render("forms/uploadBills", {
-    title: "Upload Bills"
+    title: "Upload Bills",
+    ps: req.user
   });
+});
+
+router.post("/uploadBills", (req, res) => {
+  const form = new formidabel.IncomingForm()
+  form.parse(req, async (err, fields, files) => {
+    console.log(fields, files)
+  })
+  // res.render("forms/uploadBills", {
+  //   title: "Upload Bills",
+  //   ps: req.user
+  // });
 });
 
 //complaint-post

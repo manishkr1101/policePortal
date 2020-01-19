@@ -18,9 +18,9 @@ module.exports = {
     try {
       console.log(regNo);
       let vehicle = await (
-        await db.ref(`Veicle Lost/${regNo}`).once("value")
+        await db.ref(`Vehicle Lost/${regNo}`).once("value")
       ).val();
-      // console.log(vehicle);
+      console.log(vehicle);
       if (vehicle) {
         return vehicle;
       } else {

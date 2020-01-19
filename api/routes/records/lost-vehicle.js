@@ -3,6 +3,7 @@ const router = express.Router();
 const passport = require("passport");
 const checkAuth = require("../../middleware/checkAuth");
 const lostVehicles = require("../../middleware/lost-vehicle");
+const User = require('../../middleware/user')
 
 router.get("/", (req, res) => {
   lostVehicles
@@ -23,14 +24,15 @@ router.get("/", (req, res) => {
 router.get("/:vehicleDetails", async (req, res) => {
   try {
     const vehicle = await lostVehicles.getVehicleByNo(
-      Number(req.params.vehicleDetails)
+      req.params.vehicleDetails
     );
-    console.log("vehicle");
+    const user = await User.getUser(vehicle.useruid)
     res.render("records/vehicleDetails", {
       title: "Vehicle-details",
       user: getUser(req),
       css: "vehicleDetails",
-      vehicle: vehicle
+      vehicle: vehicle,
+      vehicleUser: user
     });
   } catch (error) {
     res.send(error);
