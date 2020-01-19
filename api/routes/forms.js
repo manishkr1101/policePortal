@@ -8,7 +8,7 @@ const formidabel = require("formidable");
 const storage = require("../middleware/storage");
 const db = require("../middleware/db");
 const face = require("../middleware/face");
-const acrypt = require('../middleware/acrypt')
+const acrypt = require("../middleware/acrypt");
 
 let otps = {};
 
@@ -21,7 +21,7 @@ router.get("/fir", checkAuth, (req, res) => {
 router.post("/fir", checkAuth, (req, res) => {
   const form = new formidabel.IncomingForm();
   let fir;
-  form.parse(req,async (err, fields, files) => {
+  form.parse(req, async (err, fields, files) => {
     let otp = fields.otp;
     const date = new Date().getTime();
 
@@ -50,7 +50,7 @@ router.post("/fir", checkAuth, (req, res) => {
         accepted: 0
       };
 
-      const msg = await acrypt.encrypt(fir['fir-no'], fields.content)
+      const msg = await acrypt.encrypt(fir["fir-no"], fields.content);
       fir.content = msg.encryptedData;
 
       if (fields.isSameAddr == "on") {
@@ -214,6 +214,18 @@ router.post("/lost-vehicle", (req, res) => {
 router.get("/complaint", (req, res) => {
   res.render("forms/complaint", {
     title: "Report Complain"
+  });
+});
+
+router.get("/requestforFund", (req, res) => {
+  res.render("forms/requestforFund", {
+    title: "Request for Fund"
+  });
+});
+
+router.get("/uploadBills", (req, res) => {
+  res.render("forms/uploadBills", {
+    title: "Upload Bills"
   });
 });
 

@@ -1,0 +1,15 @@
+.header {
+  text-align: center;
+}
+
+tr {
+  border-bottom: none;
+}
+
+$i: 1;
+tr td:nth-child(#{$i + 0}) {
+  font-weight: 500;
+}
+tr td:nth-child(#{$i + 2}) {
+  font-weight: 500;
+}

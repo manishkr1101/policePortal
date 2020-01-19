@@ -1,0 +1,16 @@
+table.striped > tbody > tr:nth-child(odd) {
+  background-color: rgba(216, 193, 193, 0.5); }
+
+.request-list {
+  width: 90%;
+  margin: auto; }
+
+.header {
+  text-align: center; }
+
+body {
+  counter-reset: Count-Value; }
+
+tr td:first-child:before {
+  counter-increment: Count-Value;
+  content: counter(Count-Value) ". "; }

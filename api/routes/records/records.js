@@ -8,12 +8,14 @@ const firRoute = require("./fir");
 const complaintRoute = require("./complaint");
 const missingpersonRoute = require("./missing-person");
 const lostvehicleRoute = require("./lost-vehicle");
+const fundAllocationRoute = require("./fundAllocaton");
 
 router.use("/criminal", criminalRoute);
 router.use("/fir", firRoute);
 router.use("/complaint", complaintRoute);
 router.use("/missing-person", missingpersonRoute);
 router.use("/lost-vehicle", lostvehicleRoute);
+router.use("/fundAllocation", fundAllocationRoute);
 
 router.get("/test", (req, res) => {
   console.log(req.ip, req.connection.remoteAddress);
