@@ -46,6 +46,9 @@
     ::-webkit-scrollbar-thumb:hover {
       background: rgb(106, 188, 243);
     }
+    .img-polaroid{
+      height: 250px;
+    }
   </style>
 </head>
 
@@ -220,9 +223,9 @@
       </div>
       <div class="row">
         <div class="span3">
-          <img src="" alt="" class="img-polaroid" />
+          <img src="<%= polices.sp.url %>" alt="" class="img-polaroid" />
           <div class="roles">
-            <h5><strong>Baby Stewards Jr</strong></h5>
+            <h5><strong><%= polices.sp.name %></strong></h5>
             <p>
               Superintendent of police
             </p>
@@ -240,9 +243,9 @@
           </div>
         </div>
         <div class="span3">
-          <img src="" alt="" class="img-polaroid" />
+          <img src="<%= polices.dsp.url %>" alt="" class="img-polaroid" />
           <div class="roles">
-            <h5><strong>Tommy Kreunichev</strong></h5>
+            <h5><strong><%= polices.dsp.name %></strong></h5>
             <p>
               Deputy Superintendent of Police
             </p>
@@ -260,9 +263,9 @@
           </div>
         </div>
         <div class="span3">
-          <img src="" alt="" class="img-polaroid" />
+          <img src="<%= polices.ins.url %>" alt="" class="img-polaroid" />
           <div class="roles">
-            <h5><strong>Moriella Maccini</strong></h5>
+            <h5><strong><%= polices.ins.name %></strong></h5>
             <p>
               Inspector
             </p>
@@ -279,7 +282,7 @@
             </ul>
           </div>
         </div>
-        <div class="span3">
+        <!-- <div class="span3">
           <img src="" alt="" class="img-polaroid" />
           <div class="roles">
             <h5><strong>Brian James Scoothie</strong></h5>
@@ -298,7 +301,7 @@
               </li>
             </ul>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
   </section>

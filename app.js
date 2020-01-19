@@ -91,16 +91,35 @@ app.use("/places", placesRoutes);
 app.use("/nature-of-complaint", nocRoutes);
 app.use("/sendotp", otpRoutes);
 
-app.get("/", checkAuth, (req, res) => {
-  console.log(req.user);
-  console.log(req.ip);
+app.get("/", checkAuth, async (req, res) => {
   const options = {
     title: "Home",
     css: "styles",
-    ps: req.user
+    ps: req.user,
+    polices: await getPolices(req.user.psid)
   };
   res.render("index", options);
 });
+
+async function getPolices(psid){
+  const obj = (await db.ref('police-station/'+psid).once('value')).val()
+  let newObj = {
+    sp: obj.sp,
+    dsp: obj.dsp,
+    ins: obj.ins
+  }
+  console.log(newObj)
+  let result = {}
+  for(let i in newObj){
+     let temp = await (await db.ref(`police/${newObj[i]}`).once('value')).val()
+     console.log(temp)
+     result[i] = {}
+     result[i]['name'] = temp.name
+     result[i]['url'] = await storage.getSignedUrl(temp.image.url)
+
+  }
+  return result
+}
 
 app.get("/logout", checkAuth, (req, res) => {
   req.logOut();
