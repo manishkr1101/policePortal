@@ -50,8 +50,10 @@ router.post("/fir", checkAuth, (req, res) => {
         accepted: 0
       };
 
-      const msg = await acrypt.encrypt(fir["fir-no"], fields.content);
-      fir.content = msg.encryptedData;
+      // const msg = await acrypt.encrypt(fir["fir-no"], fields.content);
+      // fir.content = msg.encryptedData;
+
+      fir.content = fields.content;
 
       if (fields.isSameAddr == "on") {
         fir.complainant["perm-address"] = fir.complainant.address;
@@ -225,29 +227,75 @@ router.get("/requestforFund", (req, res) => {
 });
 
 router.post("/requestforFund", (req, res) => {
-  res.render("forms/requestforFund", {
-    title: "Request for Fund",
-    ps: req.user
-  });
+  let form = new formidabel.IncomingForm()
+  form.parse(req,async (err, fields, files) => {
+    const timestamp = new Date().getTime()
+    
+    const file = files.signature
+    const imageInfo = await storage.uploadFile(file.path, `request/${timestamp}/sign.${file.type.split('/')[1]}`, file.type)
+    await db.ref(`police-station/${req.user.psid}/requests/${timestamp}`).set({
+      desc: fields.content,
+      amount: fields.amount,
+      'ins-name': fields.insName,
+      date: timestamp,
+      id: timestamp,
+      signature: imageInfo,
+      status: 'pending'
+    })
+    res.send(`Your request id is ${timestamp}`)
+  })
 });
 
 
+router.post("/uploadBills", (req, res) => {
+  let form = new formidabel.IncomingForm(),
+    fields = {},
+    files = [];
+  form
+    .on("field", (field, value) => {
+      // console.log(field, value);
+      fields[field] = value;
+    })
+    .on("file", function(field, file) {
+      // console.log(field, file);
+      files.push(file);
+    })
+    .on("end", function() {
+      // console.log(files)
+      uploadBills(fields, files);
+      // res.send(fields)
+    });
+  form.parse(req);
+
+  async function uploadBills(fields, files){
+    let key;
+    let bills = {}
+    for(let file of files){
+      key = await getKey()
+      console.log(key)
+      bills[key] = await storage.uploadFile(file.path, `bills/${fields.requestId}/${file.name}`, file.type)
+    }
+
+  
+
+    await db.ref(`police-station/${fields.pid}/requests/${fields.requestId}`).update({
+      bills: bills
+    })
+
+    res.send('uploaded')
+  }
+
+  async function getKey() {
+    return (await db.ref().push()).key;
+  }
+});
+
 router.get("/uploadBills", (req, res) => {
+ 
   res.render("forms/uploadBills", {
     title: "Upload Bills",
     ps: req.user
   });
-});
-
-router.post("/uploadBills", (req, res) => {
-  const form = new formidabel.IncomingForm()
-  form.parse(req, async (err, fields, files) => {
-    console.log(fields, files)
-  })
-  // res.render("forms/uploadBills", {
-  //   title: "Upload Bills",
-  //   ps: req.user
-  // });
 });
 
 //complaint-post
