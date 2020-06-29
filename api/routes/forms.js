@@ -50,10 +50,10 @@ router.post("/fir", checkAuth, (req, res) => {
         accepted: 0
       };
 
-      // const msg = await acrypt.encrypt(fir["fir-no"], fields.content);
-      // fir.content = msg.encryptedData;
+      const msg = await acrypt.encrypt(fir["fir-no"], fields.content);
+      fir.content = msg.encryptedData;
 
-      fir.content = fields.content;
+      // fir.content = fields.content;
 
       if (fields.isSameAddr == "on") {
         fir.complainant["perm-address"] = fir.complainant.address;

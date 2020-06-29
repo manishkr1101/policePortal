@@ -32,7 +32,7 @@ router.get("/:firNumber", async (req, res) => {
     fir.complainant["dob"] = date.getDate(fir.complainant["dob"]);
     fir.signature.url = await storage.getSignedUrl(fir.signature.url);
 
-    // fir.content = (await acrypt.decrypt(fir['fir-no'], fir.content)).decryptedData
+    fir.content = (await acrypt.decrypt(fir['fir-no'], fir.content)).decryptedData
 
     res.render("records/fir-number", {
       title: "fir-content",

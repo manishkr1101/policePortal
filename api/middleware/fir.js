@@ -51,7 +51,7 @@ module.exports = {
         mailer.sendMail(
           fir.complainant.email, 
           'Rejection Of you Fir', 
-          `Your Fir ${fir['fir-no']} has been rejected. Kindly Check in your app.\n\nRegards, NCRA.`
+          `Your Fir ${fir['fir-no']} has been rejected. Kindly Check in your app.\nCause of rejection: ${rejectMsg}\n\nRegards, NCRA.`
         )
         await this.updateFir(firNo, fir)
       }
