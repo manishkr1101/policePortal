@@ -1,4 +1,8 @@
-require("dotenv").config();
+try {
+  require("dotenv").config();
+} catch (error) {
+  console.log(error)
+}
 const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
@@ -61,7 +65,10 @@ mongoose.connect(
     useCreateIndex: true,
     useFindAndModify: true
   }
-);
+)
+.catch(err => {
+  console.log(err)
+});
 
 const loginRoutes = require("./api/routes/login");
 const signupRoutes = require("./api/routes/signup");
@@ -162,6 +169,10 @@ app.get("/data", (req, res) => {
   //   'Uttar Pradesh': distsObj
   // })
 });
+
+app.get('/env', (req, res) => {
+  res.json(process.env)
+})
 
 app.listen(process.env.PORT || 3000, () => {
   console.log(`server is running at localhost:${process.env.PORT | 3000}`);
